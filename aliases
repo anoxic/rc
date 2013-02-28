@@ -1,0 +1,85 @@
+# ------------------------
+# Some general stuff
+# ------------------------
+run() { this=$1; shift; command $this "$@" & }
+alias bye='exit'
+alias mkdir='mkdir -p'
+alias lc='wc -l'
+
+# To "play" fortunes for musing
+alias foochun='while true; do fortune -w; done'
+
+# ------------------------
+# Sprunge
+# ------------------------
+sprunge() { $@ | curl -F 'sprunge=<-' http://sprunge.us; }
+
+# ------------------------
+# Vim
+# ------------------------
+alias v="vim -p"
+
+# ------------------------
+# Emacs
+# ------------------------
+alias emacs='echo'
+
+# ------------------------
+# Git 
+# ------------------------
+alias g='git'
+alias gs='git status'
+function ga () git add "$@"
+alias gl='git pull'
+alias gp='git push'
+function gc () git commit "$@"
+
+# ------------------------
+# Unix
+# ------------------------
+
+# Saves repeating ps aux | grep foo
+function psg {
+  ps wwwaux | egrep "($1|%CPU)" | grep -v grep
+}
+
+# Always edit crontab with Vim
+alias crontab="VIM_CRONTAB=true crontab"
+
+# Listing files
+alias ls='ls -hCF --group-directories-first'
+alias ll='ls -l'
+alias la='ls -A'
+alias lla='ll -A'
+
+# Directory navigation
+alias p='echo "${PWD/#$HOME/~}"'
+alias whereami='echo $HOST'
+alias path='echo -e ${PATH//:/\\n}'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# ------------------------
+# xflux
+# ------------------------
+alias nk='killall xflux'        # To kill any instance of xflux
+alias n='nk; xflux -z 37620 -k' # Use: n <color temperature>
+
+# ------------------------
+# PDFs
+# ------------------------
+function combine-pdfs() gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=output.pdf "$@"
+
+# ------------------------
+# Platform specific
+# ------------------------
+
+if [[ `uname` == 'Linux' ]]; then
+    [ -d "/usr/bin/acpi" ] || alias battery='acpi'
+elif [[ `uname` == 'Darwin' ]]; then
+    function vol() osascript -e "set volume $1"
+    alias textedit="open -a textedit"
+    alias coteditor="open -a coteditor"
+    alias chrome="open -a google\ chrome"
+fi
