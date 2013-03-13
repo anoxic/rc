@@ -48,7 +48,6 @@ function psg {
 alias crontab="VIM_CRONTAB=true crontab"
 
 # Listing files
-alias ls='ls -hCF --group-directories-first'
 alias ll='ls -l'
 alias la='ls -A'
 alias lla='ll -A'
@@ -78,6 +77,7 @@ function combine-pdfs() gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=o
 
 if [[ `uname` == 'Linux' ]]; then
     [ -d "/usr/bin/acpi" ] || alias battery='acpi'
+    alias ls='ls -hCF --group-directories-first'
 elif [[ `uname` == 'Darwin' ]]; then
     function vol() osascript -e "set volume $1"
     alias textedit="open -a textedit"
