@@ -1,2 +1,4 @@
 [user]
 	email = brian@zickzickzick.com
+[color]
+	ui = true
