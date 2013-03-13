@@ -17,6 +17,7 @@ sprunge() { $@ | curl -F 'sprunge=<-' http://sprunge.us; }
 # ------------------------
 # Vim
 # ------------------------
+alias vi="echo"
 alias v="vim -p"
 
 # ------------------------
