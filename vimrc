@@ -36,6 +36,18 @@ nnoremap <C-L> :nohl<CR><C-L>
 " Line numbers
 set number
 
+" Mouse
+set mouse=a
+
+" Visual block mode
+set virtualedit+=block
+
+" Spelling
+set spelllang=en_us
+
+" Title
+set title
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Pathogen
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -61,6 +73,18 @@ set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
+
+" Position fold at indent
+function! MyFoldText()
+	let n = v:foldend - v:foldstart + 1
+	let i = indent(v:foldstart)
+	let istr = ''
+	while i > 0
+		let istr = istr . ' '
+		let i = i - 1
+	endwhile
+	return istr . "+-" . v:folddashes . " " . n . " lines "
+endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -120,28 +144,3 @@ endif
 set nobackup
 set nowb
 set noswapfile
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Uncategorized!
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set mouse=a
-
-" Spelling
-set spelllang=en_us
-
-" Title
-set title
-
-" Position fold at indent
-function! MyFoldText()
-	let n = v:foldend - v:foldstart + 1
-	let i = indent(v:foldstart)
-	let istr = ''
-	while i > 0
-		let istr = istr . ' '
-		let i = i - 1
-	endwhile
-	return istr . "+-" . v:folddashes . " " . n . " lines "
-endfunction
