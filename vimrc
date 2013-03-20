@@ -74,6 +74,9 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
+" Unless I'm editing CSS
+autocmd FileType css setlocal shiftwidth=2 tabstop=2
+
 " Linebreak on 500 characters
 set lbr
 set tw=500
@@ -93,6 +96,7 @@ function! MyFoldText()
 	endwhile
 	return istr . "+-" . v:folddashes . " " . n . " lines "
 endfunction
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
