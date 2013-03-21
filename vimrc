@@ -112,7 +112,7 @@ endfunction
 " Enable syntax highlighting
 syntax enable
 
-colorscheme railscasts
+colorscheme jellybeans
 set background=dark
 
 " Set extra options when running in GUI mode
