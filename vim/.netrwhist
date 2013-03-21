@@ -1,9 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/brian/Library/Caches/Cleanup At Startup/Transmit/D015A9D6-D8B3-4F5E-B768-85898C5F86A1'
-let g:netrw_dirhist_2='/var/www/donationpages'
-let g:netrw_dirhist_3='/var/www/donationpages/content'
-let g:netrw_dirhist_4='/var/www/donationpages'
-let g:netrw_dirhist_5='/var/www/donationpages/content'
-let g:netrw_dirhist_6='/var/www/.zsh'
-let g:netrw_dirhist_7='/var/www/.zsh/functions'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/var/www/checkout-sandbox/vendor/dabble/dabble/src'
+let g:netrw_dirhist_2='/var/www/checkout-sandbox/vendor/dabble/dabble/src/Dabble'

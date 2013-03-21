@@ -104,7 +104,7 @@ endfunction
 " Enable syntax highlighting
 syntax enable
 
-colorscheme desert
+colorscheme railscasts
 set background=dark
 
 " Set extra options when running in GUI mode
