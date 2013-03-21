@@ -9,7 +9,7 @@
 
 hi clear
 
-set background=light
+set background=dark
 if version > 580
     " no guarantees for version 5.8 and below, but this makes it stop
     " complaining
@@ -18,7 +18,7 @@ if version > 580
 	syntax reset
     endif
 endif
-let g:colors_name="github"
+let g:colors_name="thumb"
 
 hi Normal       guifg=#000000 guibg=#F8F8FF
 

@@ -1,0 +1,6 @@
+[submodule "vim/bundle/splitjoin"]
+	path = vim/bundle/splitjoin
+	url = git://github.com/AndrewRadev/splitjoin.vim.git
+[submodule "vim/bundle/vim-lesscss"]
+	path = vim/bundle/vim-lesscss
+	url = git://github.com/vitalk/vim-lesscss.git

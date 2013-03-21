@@ -54,6 +54,14 @@ set title
 execute pathogen#infect()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CSS splitting/joining
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Split one-line declarations
+nmap " <Esc>:s/\([{;]\)[ ^I]*\(}*\)/\1\r\2  /g<CR> 
+" Join multi-line declarations
+vmap " :s/\([;{]\)\n[ ^I]*/\1 /g<CR> 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PDV -- phpDoc for Vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source ~/.vim/plugin/php-doc.vim 
