@@ -114,6 +114,8 @@ syntax enable
 
 colorscheme jellybeans
 set background=dark
+hi StatusLine ctermfg=white ctermbg=darkgrey
+hi Comment ctermfg=black
 
 " Set extra options when running in GUI mode
 if has("gui_running")
