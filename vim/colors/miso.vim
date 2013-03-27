@@ -1,17 +1,14 @@
-" Vim Colorfile
-
 set background=dark
 
-hi clear
-
-if exists("syntax_on")
-  syntax reset
-endif
-
-let colors_name = "miso"
+colorscheme solarized
 
 
 " Settings
+hi LineNr ctermfg=black ctermbg=none                    " Make the line numbers very dark
+hi SignColumn ctermbg=none                              " Remove sign column bg
+hi TabLine cterm=none ctermfg=blue ctermbg=black        " Tabline
+hi TabLineFill cterm=none ctermfg=blue ctermbg=black    " Tabline
+hi TabLineSel cterm=none ctermfg=white ctermbg=none     " Tabline
 
-hi LineNr ctermfg=black         " Make the line numbers very dark
-hi SignColumn ctermbg=none      " Remove sign column bg
+hi Comment ctermfg=black                                " Make the comments verry dark!
+hi Visual term=reverse ctermfg=black ctermbg=white      " Selection...
