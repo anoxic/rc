@@ -31,34 +31,23 @@ precmd_functions+='precmd_update_git_vars'
 chpwd_functions+='chpwd_update_git_vars'
  
 # Set the prompt.
-PROMPT=$'%{${fg[cyan]}%}%B%~%b$(prompt_git_info)%{${fg[default]}%} '
+PROMPT=$'%{${fg[cyan]}%}%~$(prompt_git_info)%{${fg[default]}%} '
 
-comment() {
-    autoload -U colors; colors; setopt prompt_subst
-    PROMPT=$'%{$fg_bold[red]%}✄  %{$reset_color%}' 
-
-    # Display git branch on rprompt
-    typeset -ga precmd_functions
-    precmd_functions+='update_git_branch_prompt'
-    update_git_branch_prompt() {
-        RPROMPT=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
-    }
-}
 
 # ------------------------
 # Title
 # ------------------------
-set_title() {
+precmd_set_title() {
 	[[ -t 1 ]] || return
 	case $TERM in
 		sun-cmd) print -Pn "\e]l%n@%m: %~\e\\" ;;
 		*xterm*|rxvt|(dt|k|E)term) print -Pn "\e]2;%n@%m: %~\a" ;;
 		screen*) print -Pn "\e_%n@%m: %~\e\\" ;;
 	esac
-}                                                                         
-precmd() {
-	set_title
 }
+typeset -ga precmd_set_title
+precmd_functions+='precmd_set_title'
+
 
 # ------------------------
 # zsh-specific aliases
@@ -83,6 +72,7 @@ bindkey -e
 # ------------------------
 # syntax-hightlighting
 # ------------------------
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ------------------------
