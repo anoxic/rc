@@ -48,6 +48,13 @@ set spelllang=en_us
 " Title
 set title
 
+" Switch - https://github.com/AndrewRadev/switch.vimone
+nnoremap - :Switch<cr>
+
+" Sideways
+nnoremap <c-h> :SidewaysLeft<cr>
+nnoremap <c-l> :SidewaysRight<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Pathogen
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
