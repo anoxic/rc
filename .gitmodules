@@ -4,3 +4,6 @@
 [submodule "vim/bundle/vim-lesscss"]
 	path = vim/bundle/vim-lesscss
 	url = git://github.com/vitalk/vim-lesscss.git
+[submodule "zsh/zsh-syntax-highlighting"]
+	path = zsh/zsh-syntax-highlighting
+	url = git://github.com/zsh-users/zsh-syntax-highlighting

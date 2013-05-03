@@ -74,9 +74,3 @@ bindkey -e
 # ------------------------
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# ------------------------
-# Mouse placement
-# ------------------------
-. $HOME/.zsh/mouse.zsh
-zle-toggle-mouse
