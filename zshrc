@@ -9,6 +9,9 @@ export GIT_EDITOR='vim'
 # Prompt
 # ------------------------
 
+# Vim Editing Mode
+bindkey -v
+
 # Initialize colors.
 autoload -U colors
 colors
@@ -67,10 +70,11 @@ SAVEHIST=7777
 # ------------------------
 setopt autocd beep nomatch
 unsetopt notify
-bindkey -e
 
 # ------------------------
 # syntax-hightlighting
 # ------------------------
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+PATH=$PATH:$HOME//.rvm/bin # Add RVM to PATH for scripting

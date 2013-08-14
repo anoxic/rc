@@ -38,6 +38,7 @@ set number
 
 " Mouse
 set mouse=a
+set ttymouse=xterm2
 
 " Visual block mode
 set virtualedit+=block
@@ -48,12 +49,25 @@ set spelllang=en_us
 " Title
 set title
 
-" Switch - https://github.com/AndrewRadev/switch.vimone
+" Switch - https://github.com/AndrewRadev/switch.vim
 nnoremap - :Switch<cr>
 
 " Sideways
 nnoremap <c-h> :SidewaysLeft<cr>
 nnoremap <c-l> :SidewaysRight<cr>
+
+" Up/Down
+nnoremap <c-k> <c-c>ddkkp
+nnoremap <c-k> <c-c>ddp
+vnoremap <c-k> dkkp
+vnoremap <c-k> dp
+
+" More fun with return...
+nnoremap <Return> o<Esc>
+nnoremap <s-Return> O<Esc>
+
+" Visual search/replace
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Pathogen
@@ -89,7 +103,7 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
-" Unless I'm editing CSS
+" ...unless I'm editing CSS
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
 
 " Linebreak on 500 characters
@@ -99,18 +113,6 @@ set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
-
-" Position fold at indent
-function! MyFoldText()
-	let n = v:foldend - v:foldstart + 1
-	let i = indent(v:foldstart)
-	let istr = ''
-	while i > 0
-		let istr = istr . ' '
-		let i = i - 1
-	endwhile
-	return istr . "+-" . v:folddashes . " " . n . " lines "
-endfunction
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -145,7 +147,6 @@ let g:debuggerPort = 9999
 
 " Javascript
 let javaScript_alternateSwitch = 1
-"let javaScript_fold            = 1
 
 " JSON
 au BufNewFile,BufRead *.json setf javascript
@@ -159,6 +160,7 @@ let html_use_css	= 1
 let html_no_hyperlinks	= 1
 let use_xhtml		= 1
 let html_ignore_folding	= 1
+au BufNewFile,BufRead *.mustache set filetype=html
 if exists('html_no_pre')
 	unlet html_no_pre
 endif

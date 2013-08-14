@@ -1,8 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/var/www/checkout-sandbox/vendor/dabble/dabble/src'
-let g:netrw_dirhist_2='/var/www/checkout-sandbox/vendor/dabble/dabble/src/Dabble'
-let g:netrw_dirhist_3='/var/www/checkout-sandbox/templates'
-let g:netrw_dirhist_4='/var/www/checkout-sandbox/vendor'
-let g:netrw_dirhist_5='/var/www/checkout-sandbox/templates'
-let g:netrw_dirhist_6='/var/www/checkout-sandbox/templates/clips'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/var/www/checkout-sandbox/vendor/dabble'
+let g:netrw_dirhist_2='/var/www/checkout-sandbox/vendor/dabble/dabble'
+let g:netrw_dirhist_3='/var/www/checkout-sandbox/vendor/dabble/dabble/src'
+let g:netrw_dirhist_4='/var/www/checkout-sandbox/vendor/dabble/dabble/src/Dabble'
+let g:netrw_dirhist_5='/var/www/checkout-sandbox/library'
