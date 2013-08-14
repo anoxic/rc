@@ -77,4 +77,7 @@ unsetopt notify
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-PATH=$PATH:$HOME//.rvm/bin # Add RVM to PATH for scripting
+# ------------------------
+# RVM
+# ------------------------
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
