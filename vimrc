@@ -103,8 +103,9 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
-" ...unless I'm editing CSS
+" ...unless I'm editing CSS or ruby
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 
 " Linebreak on 500 characters
 set lbr
