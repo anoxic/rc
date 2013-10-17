@@ -81,3 +81,11 @@ source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # RVM
 # ------------------------
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+
+# ------------------------
+# GO
+# ------------------------
+
+export PATH=$PATH:/usr/local/go/bin
+
