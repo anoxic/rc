@@ -1,6 +1,9 @@
 # .zshrc for brian
 . $HOME/.profile
 
+# Include /usr/local/bin
+export PATH=$PATH:/usr/local/bin
+
 export EDITOR='vim'
 export GIT_EDITOR='vim'
 
