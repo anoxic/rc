@@ -1,7 +1,6 @@
 # .zshrc for brian
 . $HOME/.profile
 
-
 export EDITOR='vim'
 export GIT_EDITOR='vim'
 
@@ -34,7 +33,7 @@ precmd_functions+='precmd_update_git_vars'
 chpwd_functions+='chpwd_update_git_vars'
  
 # Set the prompt.
-PROMPT=$'%{${fg[cyan]}%}%B%~%b$(prompt_git_info)%{${fg[default]}%} '
+PROMPT=$'%{${fg[red]}%}%n@%m %{${fg[cyan]}%}%B%~%b$(prompt_git_info)%{${fg[default]}%} '
 
 
 # ------------------------
