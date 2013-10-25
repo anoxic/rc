@@ -26,3 +26,12 @@ if [[ `uname` == 'Darwin' ]]; then
     MANPATH=/opt/local/share/man:$MANPATH
     set +a
 fi
+
+# Go
+#
+[[ -d "/usr/local/go/bin" ]] && PATH="$PATH:/usr/local/go/bin"
+
+# RVM
+#
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
