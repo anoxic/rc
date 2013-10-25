@@ -34,6 +34,7 @@ function ga () git add "$@"
 alias gl='git pull'
 alias gp='git push'
 function gc () git commit "$@"
+alias gb='git branch | cut -c 3- | selecta | xargs git checkout'
 
 # ------------------------
 # Unix
