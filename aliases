@@ -62,17 +62,6 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # ------------------------
-# xflux
-# ------------------------
-alias nk='killall xflux'        # To kill any instance of xflux
-alias n='nk; xflux -z 37620 -k' # Use: n <color temperature>
-
-# ------------------------
-# PDFs
-# ------------------------
-function combine-pdfs() gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=output.pdf "$@"
-
-# ------------------------
 # Platform specific
 # ------------------------
 
