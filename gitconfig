@@ -3,3 +3,5 @@
 	email = brian@zickzickzick.com
 [color]
 	ui = true
+[push]
+	default = matching
