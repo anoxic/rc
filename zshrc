@@ -79,3 +79,13 @@ unsetopt notify
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# ------------------------
+# RVM
+# ------------------------
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+# ------------------------
+# GO
+# ------------------------
+
+export PATH=$PATH:/usr/local/go/bin
