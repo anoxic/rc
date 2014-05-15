@@ -9,6 +9,9 @@ alias lc='wc -l'
 # To "play" fortunes for musing
 alias foochun='while true; do fortune -w; done'
 
+# Betty
+alias betty="~/betty/main.rb"
+
 # ------------------------
 # Sprunge
 # ------------------------
