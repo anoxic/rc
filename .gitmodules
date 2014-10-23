@@ -16,9 +16,6 @@
 [submodule "vim/bundle/sideways"]
 	path = vim/bundle/sideways
 	url = git://github.com/AndrewRadev/sideways.vim.git
-[submodule "zsh/zsh-syntax-highlighting"]
-	path = zsh/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule "vim/bundle/vim-gitgutter"]
 	path = vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
