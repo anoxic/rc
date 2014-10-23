@@ -4,9 +4,6 @@
 [submodule "vim/bundle/vim-lesscss"]
 	path = vim/bundle/vim-lesscss
 	url = git://github.com/vitalk/vim-lesscss.git
-[submodule "zsh/zsh-syntax-highlighting"]
-	path = zsh/zsh-syntax-highlighting
-	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
@@ -19,3 +16,6 @@
 [submodule "vim/bundle/sideways"]
 	path = vim/bundle/sideways
 	url = git://github.com/AndrewRadev/sideways.vim.git
+[submodule "zsh/zsh-syntax-highlighting"]
+	path = zsh/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
