@@ -12,14 +12,20 @@ files="aliases gitconfig profile vim vimrc zsh zshrc"    # list of files/folders
 
 ##########
 
-# create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
-mkdir -p $olddir
-echo "...done"
-
 # change to the dotfiles directory
 echo "Changing to the $dir directory"
 cd $dir
+echo "...done"
+
+# do git submodules
+echo "Updating Git submodules"
+git submodule init
+git submodule update
+echo "...done"
+
+# create dotfiles_old in homedir
+echo "Creating $olddir for backup of any existing dotfiles in ~"
+mkdir -p $olddir
 echo "...done"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
