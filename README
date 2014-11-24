@@ -2,4 +2,4 @@ DOTFILES
 ========
 
 git clone git@github.com:anoxic/dotfiles.git
-cd ~/dotfiles && git submodule init && git submodule update && ./make.sh
+cd ~/dotfiles && make
