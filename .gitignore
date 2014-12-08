@@ -5,6 +5,7 @@ Desktop.ini
 # Thumbnail cache files
 ._*
 Thumbs.db
+*.swp
 
 # Files that might appear on external disks
 .Spotlight-V100
@@ -17,4 +18,4 @@ vim/tmp
 vim/spell
 vim/after/.vimrc.after
 vim/.netrwhist
-*.swp
+

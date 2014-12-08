@@ -77,7 +77,8 @@ unsetopt notify
 # syntax-hightlighting
 # ------------------------
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
-source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[[ -s "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+" ]] && source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ------------------------
 # RVM
@@ -89,3 +90,10 @@ source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # ------------------------
 
 export PATH=$PATH:/usr/local/go/bin
+
+# ------------------------
+# PEAR
+# ------------------------
+
+[[ -s "$HOME/pear/bin" ]] && . "$HOME/pear/bin"
+
