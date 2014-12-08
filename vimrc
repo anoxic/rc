@@ -1,129 +1,104 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable filetype plugins
-filetype plugin on
+execute pathogen#infect()
+
+filetype plugin on               " Enable filetype plugins
 filetype indent on
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = ","              " Set a convenient leader
+let g:mapleader = ","            
+                                 
+set title                        " Display a title
+set spelllang=en_us              " Dictionary Language
+set wildmenu                     " Better command-line completion
+set number                       " Line numbers
+set virtualedit+=block           " Visual block mode
+set scrolloff=8                  " scroll 8 lines befores the edge
+set pastetoggle=<F11>            " Use <F11> to toggle between 'paste' and 'nopaste'
+                                 
+set mouse=a                      " Mouse
+set ttymouse=xterm               " Mouse
+                                 
+" Backups and undo
+set undofile                " Save undo's after file closes
+set undodir=$HOME/.vim/undo " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
 
-" Fast saving
-nmap <leader>w :w!<cr>
+set nobackup " Turn off backups, since we use version control
+set nowb
+set noswapfile
 
-" Fast closing
-nmap <leader>q :q!<cr>
 
-" Better command-line completion
-set wildmenu
 
-" Allow backspacing over autoindent, line breaks and start of insert action
-set backspace=indent,eol,start
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Keymappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Map Y to act like D/C and yank to EOL, rather than act as yy
+nnoremap Y y$
 
-" Use <F11> to toggle between 'paste' and 'nopaste'
-set pastetoggle=<F11>
+" Move a line down with <c-j>
+nnoremap <c-j> <Esc>ddp
+" Move a line up with <c-k>
+nnoremap <c-k> <Esc>ddkkp
+" Move a visual block down with <c-j>
+vnoremap <c-j> :m '>+1<CR>gv=gv
+" Move a visual up with <c-k>
+vnoremap <c-k> :m '<-2<CR>gv=gv
 
-" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
-" which is the default
-map Y y$
-
-" Map <C-L> (redraw screen) to also turn off search highlighting until the
-" next search
-nnoremap <C-L> :nohl<CR><C-L>
-
-" Line numbers
-set number
-
-" Mouse
-set mouse=a
-set ttymouse=xterm2
-
-" Visual block mode
-set virtualedit+=block
-
-" Spelling
-set spelllang=en_us
-
-" Title
-set title
-
+" Make return add a newline
+nnoremap <Return> o<Esc>
+nnoremap <s-Return> O<Esc>       
+                                 
 " Switch - https://github.com/AndrewRadev/switch.vim
 nnoremap - :Switch<cr>
 
-" Sideways
+" Sideways - https://github.com/AndrewRadev/sideways.vim
 nnoremap <c-h> :SidewaysLeft<cr>
 nnoremap <c-l> :SidewaysRight<cr>
 
-" Up/Down
-nnoremap <c-k> <c-c>ddkkp
-nnoremap <c-k> <c-c>ddp
-vnoremap <c-k> dkkp
-vnoremap <c-k> dp
+" Restrict repetitive navigation keys and up/down arrow keys
+nmap jj :<C-u>echo 'Use <Num>j!'<CR>
+nmap kk :<C-u>echo 'Use <Num>k!'<CR>
+nmap <Down> :<C-u>echo 'Use <Num>j!'<CR>
+nmap <Up> :<C-u>echo 'Use <Num>k!'<CR>
 
-" More fun with return...
-nnoremap <Return> o<Esc>
-nnoremap <s-Return> O<Esc>
-
-" Visual search/replace
-vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-
-" scroll 8 lines befores the edge
-set scrolloff=8
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Pathogen
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-execute pathogen#infect()
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CSS splitting/joining
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Split one-line declarations
+" Split CSS one-line declarations
 nmap " <Esc>:s/\([{;]\)[ ^I]*\(}*\)/\1\r\2  /g<CR> 
-" Join multi-line declarations
-vmap " :s/\([;{]\)\n[ ^I]*/\1 /g<CR> 
+" Join CSS multi-line declarations
+vmap " :s/\([;{]\)\n[ ^I]*/\1 /g<CR>               
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" PDV -- phpDoc for Vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source ~/.vim/plugin/php-doc.vim 
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
-nnoremap <C-P> :call PhpDocSingle()<CR> 
-vnoremap <C-P> :call PhpDocRange()<CR> 
+match Todo '\v^(\<|\=|\>){7}([^=].+)?$' " Highlight merge conflict markers
+
+" Jump to next/previous merge conflict marker
+nnoremap <silent> ]c /\v^(\<\|\=\|\>){7}([^=].+)?$<CR>
+nnoremap <silent> [c ?\v^(\<\|\=\|\>){7}([^=].+)\?$<CR>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use spaces instead of tabs
-set expandtab
+set expandtab    " Use spaces instead of tabs
+set shiftwidth=4 " Set tabwidth to 4
+set tabstop=4    " Set tabwidth to 4
+set smarttab     " Be smart when using tabs ;)
 
-" Be smart when using tabs ;)
-set smarttab
-
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
-
-" ...unless I'm editing CSS or ruby
+set ai   "Auto indent
+set si   "Smart indent
+set wrap "Wrap lines
+                 
+" Set tabwidth to 2 for certain languages
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
+autocmd FileType elixer setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 
-" Linebreak on 500 characters
-set lbr
-set tw=500
-
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable syntax highlighting
-syntax enable
+syntax enable " Enable syntax highlighting
 
 colorscheme miso
 set background=dark
@@ -136,12 +111,15 @@ if has("gui_running")
     set guitablabel=%M\ %t
 endif
 
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
+set encoding=utf8 " Set utf8 as standard encoding and en_US as the standard language
 
-" Use Unix as the standard file type
-set ffs=unix,dos,mac
+set ffs=unix,dos,mac " Use Unix as the standard file type
 
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Language Specific
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PHP
 let php_sql_query          = 1
 let PHP_removeCRwhenUnix   = 1
@@ -160,20 +138,12 @@ au BufNewFile,BufRead *.json set filetype=javascript
 au BufNewFile,BufRead *.less set filetype=less
 
 " HTML Syntax Conversion Options
-let html_use_css	= 1
-let html_no_hyperlinks	= 1
-let use_xhtml		= 1
+let html_use_css        = 1
+let html_no_hyperlinks  = 1
+let use_xhtml           = 1
 let html_ignore_folding	= 1
 au BufNewFile,BufRead *.mustache set filetype=html
 if exists('html_no_pre')
 	unlet html_no_pre
 endif
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
-set nobackup
-set nowb
-set noswapfile
