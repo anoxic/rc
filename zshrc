@@ -85,7 +85,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 # ------------------------
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-
 # ------------------------
 # GO
 # ------------------------
@@ -97,3 +96,4 @@ export PATH=$PATH:/usr/local/go/bin
 # ------------------------
 
 [[ -s "$HOME/pear/bin" ]] && . "$HOME/pear/bin"
+

@@ -9,6 +9,9 @@ alias lc='wc -l'
 # To "play" fortunes for musing
 alias foochun='while true; do fortune -w; done'
 
+# Betty
+alias betty="~/betty/main.rb"
+
 # ------------------------
 # Sprunge
 # ------------------------
@@ -35,6 +38,7 @@ alias gl='git pull'
 alias gp='git push'
 alias gd='git diff'
 function gc () git commit "$@"
+alias gb='git branch | cut -c 3- | selecta | xargs git checkout'
 
 # ------------------------
 # Unix
@@ -60,17 +64,6 @@ alias path='echo -e ${PATH//:/\\n}'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-
-# ------------------------
-# xflux
-# ------------------------
-alias nk='killall xflux'        # To kill any instance of xflux
-alias n='nk; xflux -z 37620 -k' # Use: n <color temperature>
-
-# ------------------------
-# PDFs
-# ------------------------
-function combine-pdfs() gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=output.pdf "$@"
 
 # ------------------------
 # Platform specific

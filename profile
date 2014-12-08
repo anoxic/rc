@@ -8,7 +8,7 @@ umask 022
 
 # Set PATH so it includes private bin if it exists
 #
-if [ -d "$HOME/bin" ] ; then
+if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
 
@@ -26,3 +26,15 @@ if [[ `uname` == 'Darwin' ]]; then
     MANPATH=/opt/local/share/man:$MANPATH
     set +a
 fi
+
+# Go
+#
+if [[ -d "/usr/local/go/bin" ]]; then
+    PATH="$PATH:/usr/local/go/bin"
+    GOPATH="/usr/local/go"
+fi
+
+# RVM
+#
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+

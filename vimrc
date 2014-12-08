@@ -69,6 +69,9 @@ nnoremap <s-Return> O<Esc>
 " Visual search/replace
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
+" scroll 8 lines befores the edge
+set scrolloff=8
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Pathogen
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
