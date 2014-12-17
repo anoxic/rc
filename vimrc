@@ -43,6 +43,9 @@ map <leader>Q :qa!<cr>
 map <leader>z :w!<cr>:q!<cr>
 map <leader>Z :wa!<cr>:qa!<cr>
 
+" Switch to last buffer
+map <leader><leader> :b#<cr>
+
 " Let's make it easy to edit this file (mnemonic for the key sequence is
 " 'e'dit 'v'imrc)
 nmap <silent> <leader>ev :e $MYVIMRC<cr>
