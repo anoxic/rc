@@ -35,6 +35,22 @@ set noswapfile
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Keymappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fast shortcuts
+map <leader>w :w!<cr>
+map <leader>W :wa!<cr>
+map <leader>q :q!<cr>
+map <leader>Q :qa!<cr>
+map <leader>z :w!<cr>:q!<cr>
+map <leader>Z :wa!<cr>:qa!<cr>
+
+" Let's make it easy to edit this file (mnemonic for the key sequence is
+" 'e'dit 'v'imrc)
+nmap <silent> <leader>ev :e $MYVIMRC<cr>
+
+" And to source this file as well (mnemonic for the key sequence is
+" 's'ource 'v'imrc)
+nmap <silent> <leader>sv :so $MYVIMRC<cr>
+
 " Map Y to act like D/C and yank to EOL, rather than act as yy
 nnoremap Y y$
 
