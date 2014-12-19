@@ -1,3 +1,7 @@
+if [[ `uname` != 'Darwin' ]]; then
+    export LANG=C.UTF-8
+fi
+
 # Set some useful aliases
 #
 [ -d "$HOME/.aliases" ] || . $HOME/.aliases
