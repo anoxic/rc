@@ -2,4 +2,4 @@ DOTFILES
 ========
 
 git clone git@github.com:anoxic/dotfiles.git
-./dotfiles/make.sh
+cd ~/dotfiles && make

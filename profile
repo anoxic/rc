@@ -12,8 +12,8 @@ umask 022
 
 # Set PATH so it includes private bin if it exists
 #
-if [ -d "$HOME/bin" ]; then
-    PATH="$HOME/bin:$PATH"
+if [ -d "$HOME/.bin" ]; then
+    PATH="$HOME/.bin:$PATH"
 fi
 
 # Set PATH so it includes font scripts
