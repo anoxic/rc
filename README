@@ -3,3 +3,6 @@ DOTFILES
 
 git clone git@github.com:anoxic/dotfiles.git
 cd ~/dotfiles && make
+
+
+(also, some day using GNU STOW might be fun: http://spin.atomicobject.com/2014/12/26/manage-dotfiles-gnu-stow/)
