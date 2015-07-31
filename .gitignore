@@ -19,3 +19,6 @@ vim/spell
 vim/after/.vimrc.after
 vim/.netrwhist
 
+# Fish
+config/fish/fish_history
+config/fish/fishd*
