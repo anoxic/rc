@@ -1,4 +1,4 @@
-FILES = aliases bin gitconfig profile vim vimrc zsh zshrc config
+FILES = aliases bin gitconfig gitmessage profile vim vimrc zsh zshrc config
 
 all:
 	git submodule init
