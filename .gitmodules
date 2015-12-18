@@ -19,9 +19,6 @@
 [submodule "vim/bundle/vim-gitgutter"]
 	path = vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
-[submodule "zsh/zsh-syntax-highlighting"]
-	path = zsh/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule "vim/bundle/vim-elixir"]
 	path = vim/bundle/vim-elixir
 	url = https://github.com/elixir-lang/vim-elixir
