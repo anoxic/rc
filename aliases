@@ -1,20 +1,5 @@
-# ------------------------
-# Some general stuff
-# ------------------------
-run() { this=$1; shift; command $this "$@" & }
-alias bye='exit'
-alias mkdir='mkdir -p'
-alias lc='wc -l'
-
-# To "play" fortunes for musing
-alias foochun='while true; do fortune -w; done'
-
 # Betty
 alias betty="~/betty/main.rb"
-
-# ------------------------
-# Sprunge
-# ------------------------
 sprunge() { $@ | curl -F 'sprunge=<-' http://sprunge.us; }
 
 # ------------------------

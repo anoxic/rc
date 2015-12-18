@@ -89,7 +89,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 # GO
 # ------------------------
 
-export PATH=$PATH:/usr/local/go/bin
+[[ -s "/usr/local/go/bin" ]] && export PATH=$PATH:/usr/local/go/bin
 
 # ------------------------
 # PEAR
