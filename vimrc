@@ -3,6 +3,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 execute pathogen#infect()
 
+set shell=sh
+
 filetype plugin on               " Enable filetype plugins
 filetype indent on
 
