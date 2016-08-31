@@ -145,6 +145,7 @@ set ffs=unix,dos,mac " Use Unix as the standard file type
 let php_sql_query          = 1
 let PHP_removeCRwhenUnix   = 1
 let php_show_semicolon     = 0
+let g:php_refactor_command='php $HOME/dotfiles/vim/refactor.phar'
 
 let g:debuggerPort = 9999
 

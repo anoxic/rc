@@ -22,3 +22,9 @@
 [submodule "vim/bundle/vim-elixir"]
 	path = vim/bundle/vim-elixir
 	url = https://github.com/elixir-lang/vim-elixir
+[submodule "vim/bundle/vim-php-refactoring"]
+	path = vim/bundle/vim-php-refactoring
+	url = https://github.com/vim-php/vim-php-refactoring
+[submodule "vim/bundle/phpcomplete.vim"]
+	path = vim/bundle/phpcomplete.vim
+	url = git://github.com/shawncplus/phpcomplete.vim.git
