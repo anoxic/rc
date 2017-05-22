@@ -19,8 +19,8 @@ set virtualedit+=block           " Visual block mode
 set scrolloff=8                  " scroll 8 lines befores the edge
 set pastetoggle=<F11>            " Use <F11> to toggle between 'paste' and 'nopaste'
                                  
-set mouse=a                      " Mouse
-set ttymouse=xterm               " Mouse
+set mouse=r                      " Mouse
+"set ttymouse=xterm               " Mouse
                                  
 " Backups and undo
 set undofile                " Save undo's after file closes
