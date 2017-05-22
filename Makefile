@@ -1,4 +1,4 @@
-FILES = bin gitconfig gitmessage vim vimrc config
+FILES = bin gitconfig gitmessage vim vimrc config hyper.js
 
 all:
 	git submodule init
