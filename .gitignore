@@ -22,3 +22,6 @@ vim/.netrwhist
 # Fish
 config/fish/fish_history
 config/fish/fishd*
+
+# Composer Keys
+config/composer/
