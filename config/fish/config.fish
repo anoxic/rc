@@ -5,8 +5,8 @@ set -x PATH $PATH /usr/local/bin
 set -x EDITOR vim
 set -x GIT_EDITOR vim
 set -x VIM_CRONTAB true
+alias v "vim -p"
 alias vi "echo"
-alias v  "vim -p"
 
 # Git 
 alias g "git"
