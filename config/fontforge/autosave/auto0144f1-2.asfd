@@ -1,0 +1,42 @@
+Base: /Users/mykl/neuton/Source/Neuton-Italic.sfd
+Encoding: Custom
+UnicodeInterp: none
+LayerCount: 3
+Layer: 0 0 "Back"
+Layer: 1 0 "Fore"
+Layer: 2 0 "Compare"
+BeginChars: 272
+
+StartChar: a
+Encoding: 65 97 53
+Width: 847
+VWidth: 0
+Flags: HMWO
+LayerCount: 3
+Back
+Fore
+SplineSet
+44 274 m 0
+ 44 667 333 885 554 885 c 3
+ 631 885 720 876 755 832 c 1
+ 683 378 l 2
+ 648 153 652 105 711 96 c 10
+ 787 84 l 18
+ 769 15 l 1
+ 734 2 678 -17 618 -17 c 27
+ 525 -17 469 44 493 132 c 1
+ 481 132 l 1
+ 435 49 346 -21 245 -21 c 3
+ 123 -21 44 91 44 274 c 0
+498 201 m 1
+ 584 746 l 1
+ 556 772 511 781 465 781 c 3
+ 305 781 205 533 205 320 c 0
+ 205 171 247 106 326 106 c 3
+ 402 106 452 150 498 201 c 1
+EndSplineSet
+Layer: 2
+Colour: ffffff
+EndChar
+EndChars
+EndSplineFont
