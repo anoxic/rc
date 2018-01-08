@@ -48,12 +48,14 @@ function s -a name -d"connect to a server"
         case ftp1 ; _mosh 22   ftp1.cps.direct
         case onyx ; _mosh 2319 onyx.cps.direct
         case sse1 ; _mosh 2319 solidstone-e1.cps.direct
+        case sse2 ; _mosh 2319 solidstone-e2.cps.direct
         case ssc1 ; _mosh 2319 solidstone-c1.cps.direct
         case w1   ; ssh quarry-w1.cps.direct -p2319
-        case w2   ; ssh quarry-w2.cps.direct -p2319
+        case w2   ; _mosh 2319 quarry-w2.cps.direct
         case e1   ; ssh quarry-e1.cps.direct -p2319
         case e2   ; ssh quarry-e2.cps.direct -p2319
         case a adna z zick ; _mosh 22 adna.zick.io
+        case faith ; ssh -p3389 brian@faith.datazap.net
         case '*'  ; echo No connection by that name
     end
 end
