@@ -44,6 +44,7 @@ function s -a name -d"connect to a server"
     end
 
     switch $name
+        case static ; _mosh 2319 static1.cps.direct
         case lava ; _mosh 2319 lava2.cps.direct
         case ftp1 ; _mosh 22   ftp1.cps.direct
         case onyx ; _mosh 2319 onyx.cps.direct
