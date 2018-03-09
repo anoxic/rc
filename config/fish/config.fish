@@ -1,5 +1,5 @@
 # fish rc for anoxic
-set -x PATH $PATH /usr/local/bin
+set -x PATH /usr/sbin /usr/local/sbin /usr/local/bin $PATH
 
 # Editors
 set -x EDITOR vim
