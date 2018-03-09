@@ -1,10 +1,11 @@
-if [[ `uname` != 'Darwin' ]]; then
+#!/bin/sh
+if test "$(uname)" != 'Darwin' ; then
     export LANG=C.UTF-8
 fi
 
 # Set some useful aliases
 #
-[ -d "$HOME/.aliases" ] || . $HOME/.aliases
+[ -d ~/.aliases ] || . ~/.aliases
 
 # For ssh logins, install and configure the libpam-umask package.
 #
@@ -24,7 +25,7 @@ fi
 
 # Macports
 #
-if [[ `uname` == 'Darwin' ]]; then
+if test "$(uname)" = 'Darwin' ; then
     set -a
     PATH=/opt/local/bin:/opt/local/sbin:$PATH
     MANPATH=/opt/local/share/man:$MANPATH
@@ -33,12 +34,12 @@ fi
 
 # Go
 #
-if [[ -d "/usr/local/go/bin" ]]; then
+if test -d "/usr/local/go/bin" ; then
     PATH="$PATH:/usr/local/go/bin"
-    GOPATH="/usr/local/go"
+    export GOPATH="/usr/local/go"
 fi
 
 # RVM
 #
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+test -s ~/.rvm/scripts/rvm && . ~/.rvm/scripts/rvm
 

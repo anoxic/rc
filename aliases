@@ -1,6 +1,9 @@
+#!/bin/sh
+## Example of a broken script.
+
 # Betty
 alias betty="~/betty/main.rb"
-sprunge() { $@ | curl -F 'sprunge=<-' http://sprunge.us; }
+sprunge() { "$@" | curl -F 'sprunge=<-' http://sprunge.us; }
 
 # ------------------------
 # Vim
@@ -18,21 +21,16 @@ alias emacs='echo'
 # ------------------------
 alias g='git'
 alias gs='git status'
-function ga () git add "$@"
+ga() { git add "$@"; }
 alias gl='git pull'
 alias gp='git push'
 alias gd='git diff'
-function gc () git commit "$@"
+gc() { git commit "$@"; }
 alias gb='git branch | cut -c 3- | selecta | xargs git checkout'
 
 # ------------------------
 # Unix
 # ------------------------
-
-# Saves repeating ps aux | grep foo
-function psg {
-  ps wwwaux | egrep "($1|%CPU)" | grep -v grep
-}
 
 # Always edit crontab with Vim
 alias crontab="VIM_CRONTAB=true crontab"
@@ -54,12 +52,13 @@ alias ....='cd ../../..'
 # Platform specific
 # ------------------------
 
-if [[ `uname` == 'Linux' ]]; then
+if test "$(uname)" = 'Linux' ; then
     [ -d "/usr/bin/acpi" ] || alias battery='acpi'
     alias ls='ls -hCF --group-directories-first'
-elif [[ `uname` == 'Darwin' ]]; then
-    function vol() osascript -e "set volume $1"
+elif test "$(uname)" = 'Darwin' ; then
+    vol() { osascript -e "set volume $1"; }
     alias textedit="open -a textedit"
     alias coteditor="open -a coteditor"
-    alias chrome="open -a google\ chrome"
+    alias chrome="open -a google\\ chrome"
 fi
+
