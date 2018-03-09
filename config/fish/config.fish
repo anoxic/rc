@@ -35,31 +35,7 @@ alias lla "ll -A"
 ### Server Access
 
 function s -a name -d"connect to a server"
-    function _mosh -a port -a host
-        if type -p mosh >/dev/null ^/dev/null
-           mosh $host --ssh "ssh -p $port"
-        else
-           ssh $host -p $port
-        end
-    end
-
-    switch $name
-        case static ; _mosh 2319 static1.cps.direct
-        case lava ; _mosh 2319 lava2.cps.direct
-        case lava3 ; _mosh 2319 lava3.cps.direct
-        case ftp1 ; _mosh 22   ftp1.cps.direct
-        case onyx ; _mosh 2319 onyx.cps.direct
-        case sse1 ; _mosh 2319 solidstone-e1.cps.direct
-        case sse2 ; _mosh 2319 solidstone-e2.cps.direct
-        case ssc1 ; _mosh 2319 solidstone-c1.cps.direct
-        case w1   ; ssh quarry-w1.cps.direct -p2319
-        case w2   ; _mosh 2319 quarry-w2.cps.direct
-        case e1   ; ssh quarry-e1.cps.direct -p2319
-        case e2   ; ssh quarry-e2.cps.direct -p2319
-        case a adna z zick ; _mosh 22 adna.zick.io
-        case faith ; ssh -p3389 brian@faith.datazap.net
-        case '*'  ; echo No connection by that name
-    end
+    ~/.bin/s $name
 end
 
 ### Push Viewer

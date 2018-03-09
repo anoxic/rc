@@ -1,0 +1,30 @@
+#!/bin/sh
+
+_mosh() {
+    # arg1 = port, arg2 = host
+
+    if type -p mosh >/dev/null ^/dev/null
+    then
+       mosh "$2" --ssh "ssh -p $1"
+    else
+       ssh "$2" -p "$1"
+    fi
+}
+
+case $1 in
+    static ) _mosh 2319 static1.cps.direct        ;;
+    lava   ) _mosh 2319 lava2.cps.direct          ;;
+    lava3  ) _mosh 2319 lava3.cps.direct          ;;
+    ftp1   ) _mosh 22   ftp1.cps.direct           ;;
+    onyx   ) _mosh 2319 onyx.cps.direct           ;;
+    sse1   ) _mosh 2319 solidstone-e1.cps.direct  ;;
+    sse2   ) _mosh 2319 solidstone-e2.cps.direct  ;;
+    ssc1   ) _mosh 2319 solidstone-c1.cps.direct  ;;
+    w1     ) ssh quarry-w1.cps.direct -p2319      ;;
+    w2     ) _mosh 2319 quarry-w2.cps.direct      ;;
+    e1     ) ssh quarry-e1.cps.direct -p2319      ;;
+    e2     ) ssh quarry-e2.cps.direct -p2319      ;;
+    adna   ) _mosh 22 adna.zick.io                ;;
+    faith  ) ssh -p3389 brian@faith.datazap.net   ;;
+    *      ) echo No connection by that name      ;;
+esac
