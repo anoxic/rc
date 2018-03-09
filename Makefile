@@ -1,4 +1,4 @@
-FILES = bin gitconfig gitmessage vim vimrc config hyper.js
+FILES = bin gitconfig gitmessage vim vimrc config hyper.js profile aliases
 
 all:
 	git submodule init
