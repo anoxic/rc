@@ -1,45 +1,51 @@
 #!/bin/sh
-if test "$(uname)" != 'Darwin' ; then
-    export LANG=C.UTF-8
-fi
 
-# Set some useful aliases
-#
-[ -d ~/.aliases ] || . ~/.aliases
-
-# For ssh logins, install and configure the libpam-umask package.
-#
-umask 022
-
-# Set PATH so it includes private bin if it exists
-#
-if [ -d "$HOME/.bin" ]; then
-    PATH="$HOME/.bin:$PATH"
-fi
-
-# Set PATH so it includes font scripts
-#
-if [ -d "$HOME/Projects/Fonts/Tools" ] ; then
-	PATH=$PATH:$HOME/Projects/Fonts/Tools
-fi
-
-# Macports
-#
-if test "$(uname)" = 'Darwin' ; then
-    set -a
-    PATH=/opt/local/bin:/opt/local/sbin:$PATH
-    MANPATH=/opt/local/share/man:$MANPATH
-    set +a
-fi
-
-# Go
-#
-if test -d "/usr/local/go/bin" ; then
-    PATH="$PATH:/usr/local/go/bin"
-    export GOPATH="/usr/local/go"
-fi
-
-# RVM
-#
+umask 022 # for ssh sessions
+export PATH=/usr/sbin:/usr/local/sbin:/usr/local/bin:$PATH
+test -d "$HOME/.bin" && export PATH="$HOME/.bin:$PATH"
 test -s ~/.rvm/scripts/rvm && . ~/.rvm/scripts/rvm
 
+. ~/dotfiles/work
+
+# Editors
+export EDITOR=vim
+export GIT_EDITOR=vim
+export VIM_CRONTAB=true
+
+if which nvim >/dev/null ^/dev/null
+then
+    alias e="nvim -p"
+else
+    alias e="vim -p"
+fi
+
+# Git 
+alias g='git'
+alias gs='git status'
+alias gl='git pull'
+alias gp='git push'
+alias gd='git diff'
+alias gb='git branch | cut -c 3- | selecta | xargs git checkout'
+alias ga='git add'
+alias gc='git commit'
+
+# Navigation
+alias ll='ls -l'
+alias la='ls -A'
+alias lla='ll -A'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# Platform specific
+if test "$(uname)" = 'Linux' ; then
+    [ -d "/usr/bin/acpi" ] || alias battery='acpi'
+    alias ls='ls -hCF --group-directories-first'
+    export LANG=C.UTF-8
+elif test "$(uname)" = 'Darwin' ; then
+    vol() { osascript -e "set volume $1"; }
+    alias textedit="open -a textedit"
+    alias coteditor="open -a coteditor"
+    alias chrome="open -a google\\ chrome"
+    alias safari="open -a safari"
+fi

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+push() {
+    if test -e "/var/www/solidstone/var/log/scheduler/push-$1-*"
+    then
+        more "/var/www/solidstone/var/log/scheduler/push-$1-*"
+    else
+        echo Cannot find "/var/www/solidstone/var/log/scheduler/push-$1-\\*"
+    fi
+}
+
+push_recent() {
+    push_all | head
+}
+
+push_all() {
+    echo /var/www/solidstone/var/log/scheduler/push-*
+}
+
