@@ -28,6 +28,16 @@ alias ll "ls -l"
 alias la "ls -A"
 alias lla "ll -A"
 
+########
+# Work #
+########
+
+### Server Access
+
+function s -a name -d"connect to a server"
+    ~/.bin/s $name
+end
+
 ### Push Viewer
 function push -a id -d"View scheduler log with specified number"
     if test -e /var/www/solidstone/log/push-$id-*

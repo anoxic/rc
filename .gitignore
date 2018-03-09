@@ -16,6 +16,7 @@ vim/backups
 vim/view
 vim/tmp
 vim/spell
+vim/undo
 vim/after/.vimrc.after
 vim/.netrwhist
 
@@ -25,3 +26,6 @@ config/fish/fishd*
 
 # Composer Keys
 config/composer/
+
+# Fontforge
+config/fontforge/autosave/
