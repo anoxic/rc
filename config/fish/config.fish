@@ -18,11 +18,6 @@ alias gb "git branch | cut -c 3- | selecta | xargs git checkout"
 alias ga "git add"
 alias gc "git commit"
 
-# System
-function psg
-  ps wwwaux | egrep "($argv|%CPU)" | grep -v grep
-end
-
 # Navigation
 alias ll "ls -l"
 alias la "ls -A"

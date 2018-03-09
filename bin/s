@@ -3,7 +3,7 @@
 _mosh() {
     # arg1 = port, arg2 = host
 
-    if type -p mosh >/dev/null ^/dev/null
+    if which mosh >/dev/null ^/dev/null
     then
        mosh "$2" --ssh "ssh -p $1"
     else
