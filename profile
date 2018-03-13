@@ -1,14 +1,21 @@
-#!/bin/sh
-
 umask 022 # for ssh sessions
-export PATH=/usr/sbin:/usr/local/sbin:/usr/local/bin:$PATH
-test -d "$HOME/.bin" && export PATH="$HOME/.bin:$PATH"
-test -s ~/.rvm/scripts/rvm && . ~/.rvm/scripts/rvm
 
+# Prompt
+_ps1_color() { if test $(whoami) != root; then print "\033[94m"; else print "\033[91m"; fi }
+PS1="\u@\h $(_ps1_color)\w$(print "\033[00m")\$ "
+
+# oksh
+HISTFILE="$HOME/.ksh_history"
+HISTSIZE=7777
+bind -m '^L'=clear'^J'
+
+# Paths and scripts
+export PATH=/usr/sbin:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=$HOME/.bin:$PATH
+test -s ~/.rvm/scripts/rvm && . ~/.rvm/scripts/rvm
 . ~/dotfiles/work
 
 # Editors
-export EDITOR=vim
 export GIT_EDITOR=vim
 export VIM_CRONTAB=true
 
