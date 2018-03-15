@@ -10,10 +10,12 @@ HISTSIZE=7777
 bind -m '^L'=clear'^J'
 
 # Paths and scripts
-export PATH=/usr/sbin:/usr/local/sbin:/usr/local/bin:$PATH
-export PATH=$HOME/.bin:$PATH
+test -d /usr/sbin          && export PATH=/usr/sbin:$PATH
+test -d /usr/local/sbin    && export PATH=/usr/local/sbin:$PATH
+test -d /usr/local/bin     && export PATH=/usr/local/bin:$PATH
+test -d "$HOME/.bin"       && export PATH="$HOME/.bin:$PATH"
 test -s ~/.rvm/scripts/rvm && . ~/.rvm/scripts/rvm
-. ~/dotfiles/work
+test -d ~/dotfiles/work    && . ~/dotfiles/work
 
 # Editors
 export GIT_EDITOR=vim
