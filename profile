@@ -7,7 +7,7 @@ PS1="\u@\h $(_ps1_color)\w$(print "\033[00m")\$ "
 # oksh
 HISTFILE="$HOME/.ksh_history"
 HISTSIZE=7777
-bind -m '^L'=clear'^J'
+command -v bind >/dev/null && bind -m '^L'=clear'^J'
 
 # Paths and scripts
 test -d /usr/sbin          && export PATH=/usr/sbin:$PATH
