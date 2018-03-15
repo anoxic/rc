@@ -13,8 +13,7 @@ _mosh() {
 
 case $1 in
     static ) _mosh 2319 static1.cps.direct        ;;
-    lava   ) _mosh 2319 lava2.cps.direct          ;;
-    lava3  ) _mosh 2319 lava3.cps.direct          ;;
+    lava   ) _mosh 2319 lava3.cps.direct          ;;
     ftp1   ) _mosh 22   ftp1.cps.direct           ;;
     onyx   ) _mosh 2319 onyx.cps.direct           ;;
     sse1   ) _mosh 2319 solidstone-e1.cps.direct  ;;
