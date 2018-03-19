@@ -15,7 +15,7 @@ test -d /usr/local/sbin    && export PATH=/usr/local/sbin:$PATH
 test -d /usr/local/bin     && export PATH=/usr/local/bin:$PATH
 test -d "$HOME/.bin"       && export PATH="$HOME/.bin:$PATH"
 test -s ~/.rvm/scripts/rvm && . ~/.rvm/scripts/rvm
-test -d ~/dotfiles/work    && . ~/dotfiles/work
+test -s ~/dotfiles/work    && . ~/dotfiles/work
 
 # Editors
 export GIT_EDITOR=vim
