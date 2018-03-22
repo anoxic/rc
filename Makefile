@@ -1,3 +1,5 @@
+.PHONY: all
+
 FILES = bin gitconfig gitmessage vim vimrc config hyper.js profile aliases
 
 all:

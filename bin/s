@@ -13,13 +13,14 @@ _mosh() {
 
 case $1 in
     static ) _mosh 2319 static1.cps.direct        ;;
-    lava   ) _mosh 2319 lava2.cps.direct          ;;
-    lava3  ) _mosh 2319 lava3.cps.direct          ;;
+    lava   ) _mosh 2319 lava3.cps.direct          ;;
     ftp1   ) _mosh 22   ftp1.cps.direct           ;;
     onyx   ) _mosh 2319 onyx.cps.direct           ;;
     sse1   ) _mosh 2319 solidstone-e1.cps.direct  ;;
     sse2   ) _mosh 2319 solidstone-e2.cps.direct  ;;
     ssc1   ) _mosh 2319 solidstone-c1.cps.direct  ;;
+    sqle1  ) ssh sql-e1.cps.direct -p2319         ;;
+    sqlc1  ) ssh sql-c1.cps.direct -p2319         ;;
     w1     ) ssh quarry-w1.cps.direct -p2319      ;;
     w2     ) _mosh 2319 quarry-w2.cps.direct      ;;
     e1     ) ssh quarry-e1.cps.direct -p2319      ;;

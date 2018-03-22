@@ -5,8 +5,12 @@ set -x PATH /usr/sbin /usr/local/sbin /usr/local/bin $PATH
 set -x EDITOR vim
 set -x GIT_EDITOR vim
 set -x VIM_CRONTAB true
-alias v "vim -p"
-alias vi "echo"
+
+if which nvim >/dev/null ^/dev/null
+    alias e="nvim -p"
+else
+    alias e="vim -p"
+end
 
 # Git 
 alias g "git"
