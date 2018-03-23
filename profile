@@ -36,6 +36,7 @@ alias gp='git push'
 alias gd='git diff'
 alias gb='git branch | cut -c 3- | selecta | xargs git checkout'
 alias ga='git add'
+alias gap='git add -p'
 alias gc='git commit'
 alias gcp='git commit -p'
 
