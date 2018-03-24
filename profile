@@ -1,13 +1,17 @@
 umask 022 # for ssh sessions
 
 # Prompt
-_ps1_color() { if test $(whoami) != root; then print "\033[94m"; else print "\033[91m"; fi }
-PS1="\u@\h $(_ps1_color)\w$(print "\033[00m")\$ "
+if test $(whoami) != root
+then
+    PS1="\u@\h \[\e[94m\]\w\[\e[0m\]\$ "
+else
+    PS1="\u@\h \[\e[91m\]\w\[\e[0m\]\$ "
+fi
 
 # oksh
 HISTFILE="$HOME/.ksh_history"
 HISTSIZE=7777
-command -v bind >/dev/null && bind -m '^L'=clear'^J'
+bind -m '^L'=clear'^J' 2>/dev/null
 
 # Paths and scripts
 test -d /usr/sbin          && export PATH=/usr/sbin:$PATH
