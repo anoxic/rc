@@ -1,6 +1,6 @@
 .PHONY: all
 
-FILES = bin gitconfig gitmessage vim vimrc config hyper.js profile aliases
+FILES = bin gitconfig gitmessage vim vimrc config hyper.js profile logout aliases
 
 all:
 	git submodule init
