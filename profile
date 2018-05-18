@@ -8,6 +8,9 @@ else
     PS1="\u@\h \[\e[91m\]\w\[\e[0m\]\$ "
 fi
 
+# ssh
+eval "$(ssh-agent -s)" && ssh-add
+
 # oksh
 HISTFILE="$HOME/.ksh_history"
 HISTSIZE=7777
