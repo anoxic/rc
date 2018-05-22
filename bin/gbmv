@@ -1,0 +1,6 @@
+#!/bin/sh
+#gbmv oldname newname
+
+git branch -m "$1" "$2"
+git push origin ":$1" "$2"
+git branch -u "origin/$2" $2
