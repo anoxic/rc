@@ -18,14 +18,20 @@ alias gs "git status"
 alias gl "git pull"
 alias gp "git push"
 alias gd "git diff"
+alias gdc "git diff --cached"
 alias gb "git branch | cut -c 3- | selecta | xargs git checkout"
 alias ga "git add"
+alias gap "git add -p"
 alias gc "git commit"
+alias gcp "git commit -p"
 
 # Navigation
 alias ll "ls -l"
 alias la "ls -A"
 alias lla "ll -A"
+alias .. "cd .."
+alias ... "cd ../.."
+alias .... "cd ../../.."
 
 ########
 # Work #
