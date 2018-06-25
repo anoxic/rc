@@ -21,7 +21,7 @@ test -d /usr/sbin          && export PATH=/usr/sbin:$PATH
 test -d /usr/local/sbin    && export PATH=/usr/local/sbin:$PATH
 test -d /usr/local/bin     && export PATH=/usr/local/bin:$PATH
 test -d "$HOME/.bin"       && export PATH="$HOME/.bin:$PATH"
-test -d "$HOME/.rvm/bin"   && export PATH="$PATH:$HOME/.rvm/bin"
+test -d "$HOME/.rvm/bin"   && export PATH="$HOME/.rvm/bin:$PATH"
 #test -s ~/.rvm/scripts/rvm && . ~/.rvm/scripts/rvm
 test -s ~/dotfiles/work    && . ~/dotfiles/work
 
