@@ -25,6 +25,7 @@ case $1 in
     w2     ) _mosh 2319 quarry-w2.cps.direct      ;;
     e1     ) ssh quarry-e1.cps.direct -p2319      ;;
     e2     ) ssh quarry-e2.cps.direct -p2319      ;;
+    mym    ) ssh moveyourmountain.org             ;;
     adna   ) _mosh 22 adna.zick.io                ;;
     faith  ) ssh -p3389 brian@faith.datazap.net   ;;
     *      ) echo No connection by that name      ;;
