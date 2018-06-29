@@ -11,6 +11,7 @@ _mosh() {
     fi
 }
 
+# note: the weird port numbers are to keep logs clean
 case $1 in
     static ) _mosh 2319 static1.cps.direct        ;;
     lava   ) _mosh 2319 lava3.cps.direct          ;;
