@@ -1,7 +1,7 @@
 umask 022 # for ssh sessions
 
 # Prompt
-if test $(whoami) != root
+if test "$(whoami)" != root
 then
     PS1="\u@\h \[\e[94m\]\w\[\e[0m\]% "
 else
