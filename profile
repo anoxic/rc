@@ -37,7 +37,7 @@ test -s ~/dotfiles/work    && . ~/dotfiles/work
 export GIT_EDITOR=vim
 export VIM_CRONTAB=true
 
-if command -v nvim 2>&1 >/dev/null
+if command -v nvim >/dev/null 2>&1
 then
     alias e="nvim -p"
 else
