@@ -63,11 +63,13 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # Platform specific
-if test "$(uname)" = 'Linux' ; then
+if test "$(uname)" = 'Linux'
+then
     [ -d "/usr/bin/acpi" ] || alias battery='acpi'
     alias ls='ls -hCF --group-directories-first'
     export LANG=C.UTF-8
-elif test "$(uname)" = 'Darwin' ; then
+elif test "$(uname)" = 'Darwin'
+then
     vol() { osascript -e "set volume $1"; }
     alias textedit="open -a textedit"
     alias coteditor="open -a coteditor"
