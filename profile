@@ -9,7 +9,12 @@ else
 fi
 
 # ssh
-eval "$(ssh-agent -s)" && ssh-add
+if test "$(uname)" = 'Darwin'
+then
+    eval "$(ssh-agent -s)" && ssh-add -K
+else
+    eval "$(ssh-agent -s)" && ssh-add
+fi
 
 # oksh
 HISTFILE="$HOME/.ksh_history"
