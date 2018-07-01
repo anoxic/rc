@@ -3,7 +3,7 @@
 _mosh() {
     # arg1 = port, arg2 = host
 
-    if command -v mosh 2>&1 >/dev/null
+    if command -v mosh >/dev/null 2>&1
     then
        mosh "$1"
     else
