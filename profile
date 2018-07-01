@@ -9,11 +9,14 @@ else
 fi
 
 # ssh
-if test "$(uname)" = 'Darwin'
+if test -z "$SSH_AUTH_SOCK"
 then
-    eval "$(ssh-agent -s)" && ssh-add -K
-else
-    eval "$(ssh-agent -s)" && ssh-add
+    if test "$(uname)" = 'Darwin'
+    then
+        eval "$(ssh-agent -s)" && ssh-add -K
+    else
+        eval "$(ssh-agent -s)" && ssh-add
+    fi
 fi
 
 # oksh
