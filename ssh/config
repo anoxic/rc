@@ -1,4 +1,5 @@
 Host *
-   UseKeychain yes
-   User mykl
+    UseKeychain yes
+    User mykl
+    ForwardAgent yes
 
