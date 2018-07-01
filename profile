@@ -15,7 +15,7 @@ then
     then
         eval "$(ssh-agent -s)" && ssh-add -K
     else
-        eval "$(ssh-agent -s)" && ssh-add
+        eval "$(ssh-agent -s -t 86400)" && ssh-add
     fi
 fi
 
