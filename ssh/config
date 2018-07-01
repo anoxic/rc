@@ -3,7 +3,7 @@ Host *
     User mykl
     ForwardAgent yes
 
-Host lava static e1 e2 w1 w2 sse1 sse2 ssc1 sqle1 sqlc1 onyx
+Host lava static e1 e2 w1 w2 sse1 sse2 ssc1 sqle1 sqlc1
     Port 2319
 
 Host adna
@@ -55,7 +55,3 @@ Host faith
     HostName faith.datazap.net
     Port 3389
     User brian
-
-Host onyx
-    HostName onyx.cps.direct
-

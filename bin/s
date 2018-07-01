@@ -17,7 +17,6 @@ case $1 in
     lava   ) _mosh 2319 lava3.cps.direct          ;;
     ftp1   ) _mosh 22   ftp1.cps.direct           ;;
     t2w    ) ssh t2w.cps.direct -p22              ;;
-    onyx   ) _mosh 2319 onyx.cps.direct           ;;
     sse1   ) _mosh 2319 solidstone-e1.cps.direct  ;;
     sse2   ) _mosh 2319 solidstone-e2.cps.direct  ;;
     ssc1   ) _mosh 2319 solidstone-c1.cps.direct  ;;
