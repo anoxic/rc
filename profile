@@ -16,6 +16,7 @@ then
         eval "$(ssh-agent -s)" && ssh-add -K
     else
         eval "$(ssh-agent -s -t 86400)" && ssh-add
+        trap 'ssh-add -D && ssh-agent -k' EXIT
     fi
 fi
 
