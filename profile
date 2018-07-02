@@ -1,5 +1,24 @@
 umask 022 # for ssh sessions
 
+# ssh
+if test -z "$SSH_AUTH_SOCK"
+then
+    if test "$(uname)" = 'Darwin'
+    then
+        eval "$(ssh-agent -s)" && ssh-add -K
+    else
+        eval "$(ssh-agent -s -t 86400)" && ssh-add
+        trap 'ssh-add -D && ssh-agent -k' EXIT
+    fi
+fi
+
+# oksh
+test -s $HOME/.bin/git-ksh/git-completion.ksh \
+    && . $HOME/.bin/git-ksh/git-completion.ksh
+HISTFILE="$HOME/.ksh_history"
+HISTSIZE=7777
+bind -m '^L'=clear'^J' 2>/dev/null
+
 # Prompt
 _colorize () {
     typeset n=0 i colors
@@ -16,24 +35,7 @@ _colorize () {
 
 test "$(whoami)" = root && _sigil=\# || _sigil=%
 
-PS1='\u@\h \[\e['$(_colorize $(hostname -s))'m\]\w\[\e[0m\]$_sigil '
-
-# ssh
-if test -z "$SSH_AUTH_SOCK"
-then
-    if test "$(uname)" = 'Darwin'
-    then
-        eval "$(ssh-agent -s)" && ssh-add -K
-    else
-        eval "$(ssh-agent -s -t 86400)" && ssh-add
-        trap 'ssh-add -D && ssh-agent -k' EXIT
-    fi
-fi
-
-# oksh
-HISTFILE="$HOME/.ksh_history"
-HISTSIZE=7777
-bind -m '^L'=clear'^J' 2>/dev/null
+PS1='$(__git_complete)\u@\h \[\e['$(_colorize $(hostname -s))'m\]\w\[\e[0m\]$_sigil '
 
 # Paths and scripts
 test -d /usr/sbin          && export PATH=/usr/sbin:$PATH
@@ -41,8 +43,8 @@ test -d /usr/local/sbin    && export PATH=/usr/local/sbin:$PATH
 test -d /usr/local/bin     && export PATH=/usr/local/bin:$PATH
 test -d "$HOME/.bin"       && export PATH="$HOME/.bin:$PATH"
 test -d "$HOME/.rvm/bin"   && export PATH="$HOME/.rvm/bin:$PATH"
-#test -s ~/.rvm/scripts/rvm && . ~/.rvm/scripts/rvm
-test -s ~/dotfiles/work    && . ~/dotfiles/work
+#test -s $HOME/.rvm/scripts/rvm && . $HOME/.rvm/scripts/rvm
+test -s $HOME/dotfiles/work    && . $HOME/dotfiles/work
 
 # Editors
 export GIT_EDITOR=vim
