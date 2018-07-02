@@ -1,12 +1,13 @@
 umask 022 # for ssh sessions
 
 # Prompt
-if test "$(whoami)" != root
+if test "$(whoami)" == root
 then
-    PS1="\\u@\\h \\[\\e[94m\\]\\w\\[\\e[0m\\]% "
+    _sigil=\#
 else
-    PS1="\\u@\\h \\[\\e[91m\\]\\w\\[\\e[0m\\]# "
+    _sigil=%
 fi
+PS1="\u@\h \[\e[94m\]\w\[\e[0m\]$_sigil "
 
 # ssh
 if test -z "$SSH_AUTH_SOCK"
