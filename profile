@@ -1,13 +1,22 @@
 umask 022 # for ssh sessions
 
 # Prompt
-if test "$(whoami)" == root
-then
-    _sigil=\#
-else
-    _sigil=%
-fi
-PS1='\u@\h \[\e[94m\]\w\[\e[0m\]$_sigil '
+_colorize () {
+    typeset n=0 i colors
+
+    set -A colors -- 91 92 93 94 95 96
+
+    for i in $(echo $1\\c | od -An -vtu1)
+    do
+        n=$(($n + $i))
+    done
+
+    print ${colors[$((($n % 6) + 1))]}
+}
+
+test "$(whoami)" = root && _sigil=\# || _sigil=%
+
+PS1='\u@\h \[\e['$(_colorize $(hostname -s))'m\]\w\[\e[0m\]$_sigil '
 
 # ssh
 if test -z "$SSH_AUTH_SOCK"
