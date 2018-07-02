@@ -7,7 +7,7 @@ then
 else
     _sigil=%
 fi
-PS1="\u@\h \[\e[94m\]\w\[\e[0m\]$_sigil "
+PS1='\u@\h \[\e[94m\]\w\[\e[0m\]$_sigil '
 
 # ssh
 if test -z "$SSH_AUTH_SOCK"
