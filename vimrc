@@ -1,16 +1,25 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
 execute pathogen#infect()
 
-set shell=sh
+Plugin 'shawncplus/phpcomplete.vim'
 
-filetype plugin on               " Enable filetype plugins
-filetype indent on
+call vundle#end()
+
+filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete
 
 let mapleader = ","              " Set a convenient leader
 let g:mapleader = ","            
                                  
+set shell=sh
 set title                        " Display a title
 set spelllang=en_us              " Dictionary Language
 set wildmenu                     " Better command-line completion
