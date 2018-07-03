@@ -1,15 +1,5 @@
 umask 022 # for ssh sessions
 
-# Prompt
-_colorize () {
-    set -A colors -- 91 92 93 94 95 96
-    print ${colors[$((0x$(echo $1 | shasum -a 224 | cut -c1) % 6))]}
-}
-
-test "$(whoami)" = root && _sigil=\# || _sigil=%
-
-PS1='\u@\h \[\e['$(_colorize $(hostname -s))'m\]\w\[\e[0m\]$_sigil '
-
 # ssh
 if test -z "$SSH_AUTH_SOCK"
 then
@@ -23,9 +13,21 @@ then
 fi
 
 # oksh
+test -s $HOME/.bin/git-ksh/git-completion.ksh \
+    && . $HOME/.bin/git-ksh/git-completion.ksh
 HISTFILE="$HOME/.ksh_history"
 HISTSIZE=7777
 bind -m '^L'=clear'^J' 2>/dev/null
+
+# Prompt
+_colorize () {
+    set -A colors -- 91 92 93 94 95 96
+    print ${colors[$((0x$(echo $1 | shasum -a 224 | cut -c1) % 6))]}
+}
+
+test "$(whoami)" = root && _sigil=\# || _sigil=%
+
+PS1='$(__git_complete)\u@\h \[\e['$(_colorize $(hostname -s))'m\]\w\[\e[0m\]$_sigil '
 
 # Paths and scripts
 test -d /usr/sbin          && export PATH=/usr/sbin:$PATH
@@ -33,8 +35,8 @@ test -d /usr/local/sbin    && export PATH=/usr/local/sbin:$PATH
 test -d /usr/local/bin     && export PATH=/usr/local/bin:$PATH
 test -d "$HOME/.bin"       && export PATH="$HOME/.bin:$PATH"
 test -d "$HOME/.rvm/bin"   && export PATH="$HOME/.rvm/bin:$PATH"
-#test -s ~/.rvm/scripts/rvm && . ~/.rvm/scripts/rvm
-test -s ~/dotfiles/work    && . ~/dotfiles/work
+#test -s $HOME/.rvm/scripts/rvm && . $HOME/.rvm/scripts/rvm
+test -s $HOME/dotfiles/work    && . $HOME/dotfiles/work
 
 # Editors
 export GIT_EDITOR=vim

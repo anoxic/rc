@@ -31,6 +31,9 @@
 [submodule "vim/bundle/php.vim"]
 	path = vim/bundle/php.vim
 	url = https://github.com/StanAngeloff/php.vim.git
-[submodule "bin/git-prompt"]
-	path = bin/git-prompt
+[submodule "bin/git-ksh"]
+	path = bin/git-ksh
 	url = git@gist.github.com:b78dea890b5341b0a4496569abcbfde4.git
+[submodule "vim/bundle/Vundle.vim"]
+	path = vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
