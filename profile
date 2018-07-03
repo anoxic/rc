@@ -2,16 +2,8 @@ umask 022 # for ssh sessions
 
 # Prompt
 _colorize () {
-    typeset n=0 i colors
-
     set -A colors -- 91 92 93 94 95 96
-
-    for i in $(echo $1\\c | od -An -vtu1)
-    do
-        n=$(($n + $i))
-    done
-
-    print ${colors[$((($n % 6) + 1))]}
+    print ${colors[$((0x$(echo $1 | shasum -a 224 | cut -c1) % 6))]}
 }
 
 test "$(whoami)" = root && _sigil=\# || _sigil=%
