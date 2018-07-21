@@ -13,7 +13,7 @@ _mosh() {
 
 # note: the weird port numbers are to keep logs clean
 case "$1" in
-    static|lava|ftp1|sse1|sse2|ssc1|w2|adna)
+    static|lava|ftp1|sse1|sse2|ssc1|sqle1|sqlc1|w2|adna)
         _mosh "$1";;
     *)
         ssh "$1";;
