@@ -1,6 +1,6 @@
 .PHONY: all
 
-FILES = bin gitconfig gitmessage vim vimrc config profile logout aliases ssh/config
+FILES = bin gitconfig gitmessage vim vimrc config cvsrc profile logout aliases ssh/config
 
 all:
 	git submodule init
