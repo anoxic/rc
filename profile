@@ -26,8 +26,7 @@ _colorize () {
 }
 
 test "$(whoami)" = root && _sigil=\# || _sigil=%
-
-PS1='$(__git_complete)\u@\h \[\e['$(_colorize $(hostname -s))'m\]\w\[\e[0m\]$_sigil '
+PS1='$(__git_complete)\h \[\e['$(_colorize $(hostname -s))'m\]\w\[\e[0m\]$_sigil '
 
 # Paths and scripts
 test -d /usr/sbin          && export PATH=/usr/sbin:$PATH
