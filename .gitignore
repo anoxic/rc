@@ -11,7 +11,7 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 
-# Vim
+# vim
 vim/backups
 vim/view
 vim/tmp
@@ -20,7 +20,7 @@ vim/undo
 vim/after/.vimrc.after
 vim/.netrwhist
 
-# Fish
+# fish
 config/fish/fish_history
 config/fish/fishd*
 
@@ -29,3 +29,7 @@ config/composer/
 
 # Fontforge
 config/fontforge/autosave/
+
+# cmus
+config/cmus/cache
+config/cmus/command-history
