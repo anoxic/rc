@@ -99,7 +99,6 @@ nmap " <Esc>:s/\([{;]\)[ ^I]*\(}*\)/\1\r\2  /g<CR>
 " Join CSS multi-line declarations
 vmap " :s/\([;{]\)\n[ ^I]*/\1 /g<CR>               
 
-match Todo '\v^(\<|\=|\>){7}([^=].+)?$' " Highlight merge conflict markers
 
 " Jump to next/previous merge conflict marker
 nnoremap <silent> ]c /\v^(\<\|\=\|\>){7}([^=].+)?$<CR>
@@ -145,6 +144,7 @@ set encoding=utf8 " Set utf8 as standard encoding and en_US as the standard lang
 
 set ffs=unix,dos,mac " Use Unix as the standard file type
 
+match Todo '\v^(\<|\=|\>){7}([^=].+)?$' " Highlight merge conflict markers
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
