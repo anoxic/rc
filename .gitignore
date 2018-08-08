@@ -1,15 +1,11 @@
-# Folder view configuration files
+# desktop configs, thumbnails, indexes, swap, trash files
 .DS_Store
 Desktop.ini
-
-# Thumbnail cache files
 ._*
 Thumbs.db
-*.swp
-
-# Files that might appear on external disks
 .Spotlight-V100
 .Trashes
+*.swp
 
 # vim
 vim/backups
@@ -25,10 +21,10 @@ config/nvim/.netrwhist
 config/fish/fish_history
 config/fish/fishd*
 
-# Composer Keys
+# composer
 config/composer/
 
-# Fontforge
+# fontforge
 config/fontforge/autosave/
 
 # cmus
