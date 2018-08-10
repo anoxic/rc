@@ -62,6 +62,9 @@ alias gap='git add -p'
 alias gc='git commit'
 alias gcp='git commit -p'
 
+# Processes
+alias %='fg %-'
+
 # Navigation
 alias ll='ls -l'
 alias la='ls -A'
