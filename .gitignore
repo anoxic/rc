@@ -30,3 +30,4 @@ config/fontforge/autosave/
 # cmus
 config/cmus/cache
 config/cmus/command-history
+config/cmus/lib.pl
