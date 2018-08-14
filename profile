@@ -24,9 +24,12 @@ _colorize () {
     set -A colors -- 91 92 93 94 95 96
     print ${colors[$((0x$(echo $1 | shasum -a 224 | cut -c1) % 6))]}
 }
+_pwd () {
+    pwd | sed -e "s;$HOME;~;" -e 's/\(\(\w\)[^\/]\+\/\)/\2\//g'
+}
 
 test "$(whoami)" = root && _sigil=\# || _sigil=%
-PS1='$(__git_complete)\h \[\e['$(_colorize $(hostname -s))'m\]\w\[\e[0m\]$_sigil '
+PS1='$(__git_complete)\h \[\e['$(_colorize $(hostname -s))'m\]$(_pwd)\[\e[0m\]$_sigil '
 
 # Paths and scripts
 test -d /usr/sbin          && export PATH=/usr/sbin:$PATH
