@@ -25,7 +25,7 @@ _colorize () {
     print ${colors[$((0x$(echo $1 | shasum -a 224 | cut -c1) % 6))]}
 }
 _pwd () {
-    pwd | sed -E -e "s;$HOME;~;" -e 's;([^/])[^/]+/;\1/;g'
+    pwd | sed -E -e "s;^$HOME;~;" -e 's;([^/])[^/]+/;\1/;g'
 }
 
 test "$(whoami)" = root && _sigil=\# || _sigil=%
