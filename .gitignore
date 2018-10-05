@@ -31,6 +31,8 @@ config/fontforge/autosave/
 config/cmus/cache
 config/cmus/command-history
 config/cmus/lib.pl
+config/cmus/autosave
+config/cmus/search-history
 
 # htop (i don't care about it's settings)
 config/htop/
