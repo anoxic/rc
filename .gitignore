@@ -31,3 +31,6 @@ config/fontforge/autosave/
 config/cmus/cache
 config/cmus/command-history
 config/cmus/lib.pl
+
+# htop (i don't care about it's settings)
+config/htop/
