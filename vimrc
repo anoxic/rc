@@ -43,6 +43,7 @@ set noswapfile
 
 " Search
 set incsearch  ignorecase  smartcase  hlsearch
+nmap <silent> <BS>  :nohlsearch<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
