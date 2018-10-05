@@ -1,0 +1,16 @@
+#!/bin/sh
+
+list() {
+    echo author commits files_updated lines_added lines_removed
+
+    for i in akemmerer jjewell vbarauna bzick tadamo;
+    do
+        c=$(git rev-list --count HEAD --author=$i --since=$1)
+        l=$(git log --numstat --author=$i --since=$1  --pretty="%H" |\
+            awk 'NF==3 {plus+=$1; minus+=$2} END {printf("+%d, -%d\n", plus, minus)}')
+        u=$(git whatchanged --author=$i --since=$1 --format=oneline |wc -l)
+        echo $i $c $u $l | sed s/,//
+    done
+}
+
+list $@ | column -t
