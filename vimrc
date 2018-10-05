@@ -41,6 +41,8 @@ set nobackup " Turn off backups, since we use version control
 set nowb
 set noswapfile
 
+" Search
+set incsearch  ignorecase  smartcase  hlsearch
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
