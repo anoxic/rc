@@ -1,3 +1,13 @@
+# don't drop connection if network is down temporarily (eg, suspend)
+TCPKeepAlive no
+# but do send ssh keepalives every minute to keep firewalls happy
+ServerAliveInterval 60
+ServerAliveCountMax 10
+# keep connections open for 4 hours, even after logging out
+ControlPersist 4h
+ControlMaster auto
+ControlPath ~/.ssh/sockets/socket-%r@%h:%p
+
 Host *
     IgnoreUnknown UseKeychain
     UseKeychain yes
@@ -56,3 +66,6 @@ Host faith
     HostName faith.datazap.net
     Port 3389
     User brian
+
+Host pug
+    HostName 68.183.57.171
