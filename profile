@@ -47,8 +47,11 @@ export VIM_CRONTAB=true
 if command -v nvim >/dev/null 2>&1
 then
     alias e="nvim -p"
-else
+elif command -v vim >/dev/null 2>&1
+then
     alias e="vim -p"
+else
+    alias e="vi"
 fi
 
 # Git 
