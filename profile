@@ -21,8 +21,15 @@ bind -m '^L'=clear'^J' 2>/dev/null
 
 # Prompt
 _colorize () {
+    if command -v sha512 >/dev/null 2>&1
+    then
+        sha='sha512'
+    elif command -v shasum >/dev/null 2>&1
+    then
+        sha='shasum -a 224'
+    fi
     set -A colors -- 91 92 93 94 95 96
-    print ${colors[$((0x$(echo $1 | shasum -a 224 | cut -c1) % 6))]}
+    print ${colors[$((0x$(echo $1 | $sha | cut -c1) % 6))]}
 }
 _pwd () {
     pwd | sed -E -e "s;^$HOME;~;" -e 's;([^/])[^/]+/;\1/;g'
