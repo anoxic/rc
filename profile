@@ -48,19 +48,13 @@ test -d "$HOME/.rvm/bin"   && export PATH="$HOME/.rvm/bin:$PATH"
 test -s $HOME/.bin/__work  && . $HOME/.bin/__work
 
 # Editors
-if command -v nvim >/dev/null 2>&1
-then
-    export GIT_EDITOR=nvim
-    export VIM_CRONTAB=true
-    alias e="nvim -p"
-elif command -v vim >/dev/null 2>&1
-then
-    export GIT_EDITOR=vim
-    export VIM_CRONTAB=true
-    alias e="vim -p"
-else
-    alias e="ed"
-fi
+_cmd () {
+    command -v $1 >/dev/null 2>&1
+}
+export EDITOR=`_cmd nvim && echo "nvim -p" || _cmd vim && echo "vim -p" || echo ed`
+export VIM_CRONTAB=`_cmd nvim || _cmd vim && echo true`
+export GIT_EDITOR=$EDITOR
+alias e=$EDITOR
 
 # Git 
 alias g='git'
