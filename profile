@@ -25,7 +25,7 @@ bind -m '^L'=clear'^J' 2>/dev/null
 
 # Prompt
 _colorize () {
-    sha=`( _cmd sha512 && echo 'sha512' ) || ( _cmd shasum && echo 'shasum -a 224' )`
+    sha=`( _cmd sha1 && echo 'sha1' ) || ( _cmd shasum && echo 'shasum -a 224' )`
     set -A colors -- 91 92 93 94 95 96
     print ${colors[$((0x$(echo $1 | $sha | cut -c1) % 6))]}
 }
