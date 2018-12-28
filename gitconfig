@@ -7,5 +7,7 @@
 	default = simple
 [core]
 	editor = vim
+	autocrlf = false
+	safecrlf = false
 [commit]
     template = ~/.gitmessage
