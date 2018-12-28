@@ -48,14 +48,15 @@ test -d "$HOME/.rvm/bin"   && export PATH="$HOME/.rvm/bin:$PATH"
 test -s $HOME/dotfiles/work    && . $HOME/dotfiles/work
 
 # Editors
-export GIT_EDITOR=vim
-export VIM_CRONTAB=true
-
 if command -v nvim >/dev/null 2>&1
 then
+    export GIT_EDITOR=nvim
+    export VIM_CRONTAB=true
     alias e="nvim -p"
 elif command -v vim >/dev/null 2>&1
 then
+    export GIT_EDITOR=vim
+    export VIM_CRONTAB=true
     alias e="vim -p"
 else
     alias e="vi"
