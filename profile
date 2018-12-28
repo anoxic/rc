@@ -45,7 +45,7 @@ test -d /usr/local/bin     && export PATH=/usr/local/bin:$PATH
 test -d "$HOME/.bin"       && export PATH="$HOME/.bin:$PATH"
 test -d "$HOME/.rvm/bin"   && export PATH="$HOME/.rvm/bin:$PATH"
 #test -s $HOME/.rvm/scripts/rvm && . $HOME/.rvm/scripts/rvm
-test -s $HOME/dotfiles/work    && . $HOME/dotfiles/work
+test -s $HOME/.bin/__work  && . $HOME/.bin/__work
 
 # Editors
 if command -v nvim >/dev/null 2>&1
