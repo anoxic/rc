@@ -1,7 +1,7 @@
 DOTFILES
 
-   git clone git@github.com:anoxic/dotfiles.git
-   cd ~/dotfiles && make
+   git clone git@github.com:anoxic/dotfiles.git .dotfiles
+   cd ~/.dotfiles && make
 
 
 TODO
