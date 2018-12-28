@@ -1,6 +1,10 @@
-umask 022 # for ssh sessions
+_cmd () {
+    command -v $1 >/dev/null 2>&1
+}
 
 # ssh
+umask 022
+
 if test -z "$SSH_AUTH_SOCK"
 then
     if test "$(uname)" = 'Darwin'
@@ -21,13 +25,7 @@ bind -m '^L'=clear'^J' 2>/dev/null
 
 # Prompt
 _colorize () {
-    if command -v sha512 >/dev/null 2>&1
-    then
-        sha='sha512'
-    elif command -v shasum >/dev/null 2>&1
-    then
-        sha='shasum -a 224'
-    fi
+    ( _cmd sha512 && sha='sha512' ) || ( _cmd shasum && sha='shasum -a 224' )
     set -A colors -- 91 92 93 94 95 96
     print ${colors[$((0x$(echo $1 | $sha | cut -c1) % 6))]}
 }
@@ -48,9 +46,6 @@ test -d "$HOME/.rvm/bin"   && export PATH="$HOME/.rvm/bin:$PATH"
 test -s $HOME/.bin/__work  && . $HOME/.bin/__work
 
 # Editors
-_cmd () {
-    command -v $1 >/dev/null 2>&1
-}
 export EDITOR=`_cmd nvim && echo "nvim -p" || _cmd vim && echo "vim -p" || echo ed`
 export VIM_CRONTAB=`_cmd nvim || _cmd vim && echo true`
 export GIT_EDITOR=$EDITOR
