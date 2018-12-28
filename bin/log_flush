@@ -1,0 +1,12 @@
+#!/bin/sh
+# flush logs rotated with log_rotate after a period of time
+
+
+test -z "$WHERE" && WHERE='-atime +90' # last accessed 90 days ago
+
+for i in "$@"
+do
+    find /home /var/www -name "$i-*" $WHERE -print0 2>/dev/null \
+        | xargs -0 rm -rf
+done
+
