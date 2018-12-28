@@ -50,6 +50,7 @@ export EDITOR=`_cmd nvim && echo "nvim -p" || _cmd vim && echo "vim -p" || echo 
 export VIM_CRONTAB=`_cmd nvim || _cmd vim && echo true`
 export GIT_EDITOR=$EDITOR
 alias e=$EDITOR
+set -o emacs # use standard line-editing
 
 # Git 
 alias g='git'
