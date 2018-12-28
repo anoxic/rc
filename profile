@@ -59,7 +59,7 @@ then
     export VIM_CRONTAB=true
     alias e="vim -p"
 else
-    alias e="vi"
+    alias e="ed"
 fi
 
 # Git 
