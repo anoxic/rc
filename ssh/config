@@ -69,3 +69,6 @@ Host faith
 
 Host pug
     HostName 68.183.57.171
+
+Host starship
+    HostName 199.189.242.220
