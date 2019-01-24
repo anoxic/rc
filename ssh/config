@@ -27,7 +27,7 @@ Host t2w
     HostName t2w.cps.direct
 
 Host mym
-    HostName moveyourmountain.org
+    HostName varnish.moveyourmountain.org
 
 Host lava
     HostName lava3.cps.direct
