@@ -1,0 +1,2 @@
+#!/bin/sh
+sed -i '/PROD/ { s/PROD/DEV/; b }; s/DEV/PROD/' .env
