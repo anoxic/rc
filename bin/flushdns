@@ -3,6 +3,11 @@ case "`uname`" in
     Darwin)
         sudo dscacheutil -flushcache
         sudo killall -HUP mDNSResponder
+        if ifconfig en0 | grep UP
+        then
+            sudo ifconfig en0 down
+            sudo ifconfig en0 up
+        fi
         ;;
     OpenBSD)
         doas netstart
