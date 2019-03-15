@@ -3,5 +3,5 @@ root=$(cd -P $(dirname $0); echo $(dirname $(pwd)))
 cd /
 case "$(basename "$0")" in
     'focus') sudo patch -p1 < "$root/diffs/_etc_hosts";;
-    'focusend') sudo patch -Rp1 < "$root/diffs/_etc_hosts";;
+    'unfocus') sudo patch -Rp1 < "$root/diffs/_etc_hosts";;
 esac
