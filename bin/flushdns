@@ -1,0 +1,13 @@
+#!/bin/sh
+case "`uname`" in
+    Darwin)
+        sudo dscacheutil -flushcache
+        sudo killall -HUP mDNSResponder
+        ;;
+    OpenBSD)
+        doas netstart
+        ;;
+    *)
+        echo not sure how to flush dns for `uname`
+        ;;
+esac
