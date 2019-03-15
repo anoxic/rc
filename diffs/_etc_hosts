@@ -1,6 +1,6 @@
---- /etc/hosts	2019-03-14 18:48:18.000000000 -0500
-+++ /etc/hosts_focus	2019-03-14 18:45:28.000000000 -0500
-@@ -11,3 +11,22 @@
+--- /etc/hosts	2019-03-15 16:41:52.000000000 -0500
++++ /etc/hosts_focus	2019-03-15 16:44:49.000000000 -0500
+@@ -11,3 +11,28 @@
  ##
  # NOTE: BELOW THIS LINE IS AUTOMATICALLY MODIFIED
  ##
@@ -23,3 +23,9 @@
 +# Block Twitter
 +127.0.0.1 twitter.com
 +127.0.0.1 www.twitter.com
++
++# Block fastmail
++127.0.0.1 fastmail.com
++127.0.0.1 fastmailusercontent.com
++127.0.0.1 www.fastmail.com
++127.0.0.1 www.fastmailusercontent.com
