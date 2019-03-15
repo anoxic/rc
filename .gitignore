@@ -34,5 +34,7 @@ config/cmus/lib.pl
 config/cmus/autosave
 config/cmus/search-history
 
-# htop (i don't care about it's settings)
+# settings i don't care about
+config/StardewValley/
+config/gocode/
 config/htop/
