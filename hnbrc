@@ -17,7 +17,7 @@
 		#bullet_parent_expanded "  ·"
 		#bullet_leaf            "  *"
 		#bullet_leaf            "  -"
-	bullet_leaf            "  ·"
+	bullet_leaf            "  |"
 	bullet_parent          "  +"
 	bullet_parent_expanded "  -"
 	
@@ -181,9 +181,9 @@
 		bind ppage pageup
 		bind home  "go root"
 		
-		bind ^H left
-		bind ^J down
 		bind ^K up
+		bind ^J down
+		bind ^H left
 		bind ^L right
 		
 		bind ^N    insert_below
