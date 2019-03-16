@@ -1,4 +1,4 @@
-.PHONY: all fonts
+.PHONY: all fonts st
 
 FILES = bin gitconfig gitmessage vim vimrc config cvsrc profile logout ssh/config hnbrc
 
@@ -18,5 +18,13 @@ fonts:
 		Darwin) open priv/*.ttf ;; \
 		*) echo sorry, don\'t know how to install a font on `uname` ;; \
 	esac
+
+st:
+	cd src/st; \
+	test `uname` = Darwin && git apply ../../patches/st-darwin-0.8.1.diff; \
+	git apply ../../patches/st-my-ui-0.8.1.diff; \
+	make; \
+	`command -v doas >/dev/null 2>&1 && echo doas || echo sudo` make install; \
+	make clean
 
 # https://github.com/mathiasbynens/dotfiles/blob/master/.macos
