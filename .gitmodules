@@ -40,3 +40,6 @@
 [submodule "src/st"]
 	path = src/st
 	url = git://git.suckless.org/st
+[submodule "priv"]
+	path = priv
+	url = git@github.com:anoxic/priv.git
