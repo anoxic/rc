@@ -1,6 +1,6 @@
 .PHONY: all
 
-FILES = bin gitconfig gitmessage vim vimrc config cvsrc profile logout ssh/config
+FILES = bin gitconfig gitmessage vim vimrc config cvsrc profile logout ssh/config hnbrc
 
 all:
 	git submodule init
@@ -14,3 +14,4 @@ all:
 	done
 
 
+# https://github.com/mathiasbynens/dotfiles/blob/master/.macos
