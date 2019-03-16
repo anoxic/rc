@@ -157,7 +157,7 @@
 			end
 		
 		bind ^E 'context export'
-		bind ^L 'context import'
+		bind ^I 'context import'
 		bind ^F 'macro m_search'
 			macro define m_search
 				context search
@@ -180,6 +180,11 @@
 		bind npage pagedown
 		bind ppage pageup
 		bind home  "go root"
+		
+		bind ^H left
+		bind ^J down
+		bind ^K up
+		bind ^L right
 		
 		bind ^N    insert_below
 		bind .. edit
@@ -226,12 +231,17 @@
 		bind left  left
 		bind right right
 		
+		bind ^H left
+		bind ^J down
+		bind ^K up
+		bind ^L right
+		
 		bind return  confirm
 		bind ^C     confirm
 		bind esc     cancel
 		
-		bind ^S  split
-		bind ^J  join
+		#bind ^S  split
+		#bind ^J  join
 		
 		bind backspace  backspace
 		bind backspace2 backspace
@@ -495,7 +505,7 @@
 		menu "File" "revert   " "revert"		
 		menu "File" "------------" ""
 		menu "File" "export    ^E" "context export"
-		menu "File" "import    ^L" "context import"
+		menu "File" "import    ^I" "context import"
 		menu "File" "------------" ""
 		menu "File" "spell chk F6" "macro m_spellcheck"
 		menu "File" "expand all"	    "expand --all"
