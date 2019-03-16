@@ -138,7 +138,7 @@
 	##################################################
 	
 	context main
-		helptext "ESC| menu || |F2| save || |F5| commandline || |return| edit |
+		helptext "ESC| menu || |^S| save || |F5| commandline || |return| edit |
 		bind f1 'status "Take a look at ~/.hnbrc to check out the configuration"'
 		bind .. 'status "there you will also find details about the available keybindings."'
 		bind .. 'status "please feel free to contribute more useful keybindings and helptexts..."'
@@ -181,7 +181,7 @@
 		bind ppage pageup
 		bind home  "go root"
 		
-		bind ^return    insert_below
+		bind ^N    insert_below
 		bind .. edit
 		
 		bind return edit
@@ -219,7 +219,6 @@
 		bind - collapse
 		
 		bind ^Z restore_state
-		
 	context nodeedit
 		helptext "editing node |  |ESC| revert || |return| confirm"
 		bind up    up
@@ -228,6 +227,7 @@
 		bind right right
 		
 		bind return  confirm
+		bind ^C     confirm
 		bind esc     cancel
 		
 		bind ^S  split
