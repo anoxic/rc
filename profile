@@ -79,6 +79,11 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+cd() {
+    builtin cd $@
+    export DIRHISTORY=`pwd`:$DIRHISTORY
+}
+
 pushd() {
     if test -e "$@"
     then
@@ -96,7 +101,12 @@ popd() {
 }
 
 dirh() {
-    echo $DIRSTACK | tr : '\n'
+    if test $# -eq 1 && test $1 = -a
+    then
+        echo $DIRHISTORY | tr : '\n'
+    else
+        echo $DIRSTACK | tr : '\n'
+    fi
 }
 
 # Platform specific
