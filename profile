@@ -4,6 +4,8 @@ _cmd () {
 
 # ssh
 umask 022
+test $TERM = st-256color && export TERM=xterm-256color
+export LANG=en_US.UTF-8
 
 if test -z "$SSH_AUTH_SOCK"
 then
