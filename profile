@@ -79,6 +79,26 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+pushd() {
+    if test -e "$@"
+    then
+        export DIRSTACK=`pwd`:$DIRSTACK
+        cd -- "$@"
+    else
+        echo pushd: unknown file or directory \`"$@"\`
+    fi
+}
+
+popd() {
+    test -z $DIRSTACK && echo popd: end of stack && return 1
+    export DIRSTACK=`echo $DIRSTACK | sed 's/[^:]*://'`
+    cd `echo $DIRSTACK | sed s/:.*//`
+}
+
+dirh() {
+    echo $DIRSTACK | tr : '\n'
+}
+
 # Platform specific
 if test "$(uname)" = 'Linux'
 then
