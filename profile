@@ -44,6 +44,8 @@ test -d /usr/local/sbin    && export PATH=/usr/local/sbin:$PATH
 test -d /usr/local/bin     && export PATH=/usr/local/bin:$PATH
 test -d /usr/local/go/bin  && export PATH=/usr/local/go/bin:$PATH
 test -d "$HOME/.bin"       && export PATH="$HOME/.bin:$PATH"
+test -d "$HOME/.gem"       && export GEM_HOME="$HOME/.gem/"
+test -d "$HOME/.gem/bin"   && export PATH="$HOME/.gem/bin:$PATH"
 test -d "$HOME/.rvm/bin"   && export PATH="$HOME/.rvm/bin:$PATH"
 #test -s $HOME/.rvm/scripts/rvm && . $HOME/.rvm/scripts/rvm
 test -s $HOME/.bin/__work  && . $HOME/.bin/__work
