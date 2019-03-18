@@ -1,0 +1,31 @@
+--- /etc/hosts	2019-03-15 16:41:52.000000000 -0500
++++ /etc/hosts_focus	2019-03-15 16:44:49.000000000 -0500
+@@ -11,3 +11,28 @@
+ ##
+ # NOTE: BELOW THIS LINE IS AUTOMATICALLY MODIFIED
+ ##
++
++# Block Facebook
++127.0.0.1 apps.facebook.com
++127.0.0.1 facebook.com
++127.0.0.1 fbcdn.com
++127.0.0.1 fbcdn.net
++127.0.0.1 login.facebook.com
++127.0.0.1 static.ak.connect.facebook.com
++127.0.0.1 static.ak.fbcdn.net
++127.0.0.1 www.facebook.com
++127.0.0.1 www.fbcdn.com
++127.0.0.1 www.fbcdn.net
++127.0.0.1 www.login.facebook.com
++127.0.0.1 www.static.ak.connect.facebook.com
++127.0.0.1 www.static.ak.fbcdn.net
++
++# Block Twitter
++127.0.0.1 twitter.com
++127.0.0.1 www.twitter.com
++
++# Block fastmail
++127.0.0.1 fastmail.com
++127.0.0.1 fastmailusercontent.com
++127.0.0.1 www.fastmail.com
++127.0.0.1 www.fastmailusercontent.com
