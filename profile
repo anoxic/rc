@@ -4,6 +4,8 @@ _cmd () {
 
 # ssh
 umask 022
+test $TERM = st-256color && export TERM=xterm-256color
+export LANG=en_US.UTF-8
 
 if test -z "$SSH_AUTH_SOCK"
 then
@@ -40,6 +42,7 @@ PS1='$(__git_complete)\h \[\e['$(_colorize $(hostname -s))'m\]$(_pwd)\[\e[0m\]$_
 test -d /usr/sbin          && export PATH=/usr/sbin:$PATH
 test -d /usr/local/sbin    && export PATH=/usr/local/sbin:$PATH
 test -d /usr/local/bin     && export PATH=/usr/local/bin:$PATH
+test -d /usr/local/go/bin  && export PATH=/usr/local/go/bin:$PATH
 test -d "$HOME/.bin"       && export PATH="$HOME/.bin:$PATH"
 test -d "$HOME/.gem"       && export GEM_HOME="$HOME/.gem/"
 test -d "$HOME/.gem/bin"   && export PATH="$HOME/.gem/bin:$PATH"
@@ -79,6 +82,36 @@ alias lla='ll -A'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+
+cd() {
+    builtin cd $@
+    export DIRHISTORY=`pwd`:$DIRHISTORY
+}
+
+pushd() {
+    if test -e "$@"
+    then
+        export DIRSTACK=`pwd`:$DIRSTACK
+        cd -- "$@"
+    else
+        echo pushd: unknown file or directory \`"$@"\`
+    fi
+}
+
+popd() {
+    test -z $DIRSTACK && echo popd: end of stack && return 1
+    export DIRSTACK=`echo $DIRSTACK | sed 's/[^:]*://'`
+    cd `echo $DIRSTACK | sed s/:.*//`
+}
+
+dirh() {
+    if test $# -eq 1 && test $1 = -a
+    then
+        echo $DIRHISTORY | tr : '\n'
+    else
+        echo $DIRSTACK | tr : '\n'
+    fi
+}
 
 # Platform specific
 if test "$(uname)" = 'Linux'
