@@ -1,5 +1,5 @@
 diff --git a/config.def.h b/config.def.h
-index 82b1b09..48ecd53 100644
+index 82b1b09..2bd74c4 100644
 --- a/config.def.h
 +++ b/config.def.h
 @@ -5,8 +5,8 @@
@@ -8,7 +8,7 @@ index 82b1b09..48ecd53 100644
   */
 -static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
 -static int borderpx = 2;
-+static char *font = "Input:pixelsize=15:antialias=true:hinting=false:embolden=true";
++static char *font = "Input,Apple Color Emoji:pixelsize=15:antialias=true:hinting=false:embolden=true";
 +static int borderpx = 4;
  
  /*
