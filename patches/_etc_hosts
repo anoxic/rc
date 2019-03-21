@@ -1,6 +1,6 @@
---- /etc/hosts	2019-03-15 16:41:52.000000000 -0500
-+++ /etc/hosts_focus	2019-03-15 16:44:49.000000000 -0500
-@@ -11,3 +11,28 @@
+--- /etc/hosts	2019-03-18 07:26:36.000000000 -0500
++++ /etc/hosts_focus	2019-03-18 07:26:52.000000000 -0500
+@@ -11,3 +11,32 @@
  ##
  # NOTE: BELOW THIS LINE IS AUTOMATICALLY MODIFIED
  ##
@@ -29,3 +29,7 @@
 +127.0.0.1 fastmailusercontent.com
 +127.0.0.1 www.fastmail.com
 +127.0.0.1 www.fastmailusercontent.com
++
++# Block Youtube
++127.0.0.1 youtube.com
++127.0.0.1 www.youtube.com
