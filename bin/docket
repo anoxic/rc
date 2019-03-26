@@ -1,2 +1,2 @@
 #!/bin/sh
-scp -q lava:vc/qdocs/brian/list /dev/stdout
+vim scp://lava/vc/qdocs/brian/list
