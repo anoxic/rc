@@ -1,0 +1,2 @@
+#!/bin/sh
+scp -q lava:vc/qdocs/brian/list /dev/stdout
