@@ -45,6 +45,9 @@ set noswapfile
 set incsearch  ignorecase  smartcase  hlsearch
 nmap <silent> <BS>  :nohlsearch<CR>
 
+" Write issue with some versions of netrw
+autocmd BufRead  scp://* :set bt=acwrite
+autocmd BufWrite scp://* :set bt=acwrite
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Keymappings
