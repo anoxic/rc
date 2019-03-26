@@ -1,6 +1,0 @@
-#!/bin/bash
-mkdir -p /home/mykl/cronbackup
-ls -1t /var/spool/cron/crontabs | while read cronfile
-do
-    cp -p /var/spool/cron/crontabs/"$cronfile" /home/mykl/cronbackup/"$cronfile"_`date +%Y%m%d`
-done
