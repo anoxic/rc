@@ -1,2 +1,5 @@
 #!/bin/sh
 vim scp://lava/vc/qdocs/brian/list
+echo commit message:
+read message
+ssh lava "git -C ~/vc/qdocs commit brian/list -m '$message'"
