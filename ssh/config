@@ -29,6 +29,9 @@ Host t2w
 Host mym
     HostName varnish.moveyourmountain.org
 
+Host krakatoa
+    HostName 104.225.5.2
+
 Host mothership
     HostName 104.225.97.114
 
