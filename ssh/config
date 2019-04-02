@@ -29,6 +29,9 @@ Host t2w
 Host mym
     HostName varnish.moveyourmountain.org
 
+Host mothership
+    HostName 104.225.97.114
+
 Host lava
     HostName lava3.cps.direct
 
