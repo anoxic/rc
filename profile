@@ -38,7 +38,8 @@ _pwd () {
 }
 
 test "$(whoami)" = root && _sigil=\# || _sigil=%
-PS1='$(__git_complete)\h \[\e['$(_colorize $(hostname -s))'m\]$(_pwd)\[\e[0m\]$_sigil '
+HOST=`hostname -s`
+PS1='$(__git_complete)$HOST \[\e['$(_colorize $HOST)'m\]$(_pwd)\[\e[0m\]$_sigil '
 
 # Paths and scripts
 test -d /usr/sbin          && export PATH=/usr/sbin:$PATH
