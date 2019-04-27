@@ -29,14 +29,14 @@ Host t2w
 Host mym
     HostName varnish.moveyourmountain.org
 
-Host krakatoa kr
-    HostName krakatoa.cps.direct
-
 Host mothership
     HostName 104.225.97.114
 
 Host lava
     HostName lava3.cps.direct
+
+Host krakatoa kr
+    HostName krakatoa.cps.direct
 
 Host static
     HostName static1.cps.direct
