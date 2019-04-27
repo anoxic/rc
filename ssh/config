@@ -13,7 +13,7 @@ Host *
     UseKeychain yes
     User mykl
 
-Host lava static e1 e2 w1 w2 sse1 sse2 ssc1 sqle1 sqlc1 kr*
+Host lava static e1 e2 w1 w2 sse1 sse2 ssc1 sqle1 sqlc1 kr* mothership
     Port 2319
     #ForwardAgent yes
 
@@ -30,7 +30,7 @@ Host mym
     HostName varnish.moveyourmountain.org
 
 Host mothership
-    HostName 104.225.97.114
+    HostName mothership.cps.direct
 
 Host lava
     HostName lava3.cps.direct
