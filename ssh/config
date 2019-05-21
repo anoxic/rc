@@ -1,21 +1,5 @@
-# don't drop connection if network is down temporarily (eg, suspend)
-TCPKeepAlive no
-# but do send ssh keepalives every minute to keep firewalls happy
-ServerAliveInterval 60
-ServerAliveCountMax 10
-# keep connections open for 4 hours, even after logging out
-ControlPersist 4h
-ControlMaster auto
-ControlPath ~/.ssh/sockets/socket-%r@%h:%p
-
-Host *
-    IgnoreUnknown UseKeychain
-    UseKeychain yes
-    User mykl
-
 Host lava static e1 e2 w1 w2 sse1 sse2 ssc1 sqle1 sqlc1 kr* mothership
     Port 2319
-    #ForwardAgent yes
 
 Host adna
     HostName adna.zick.io
@@ -75,3 +59,18 @@ Host faith
 
 Host starship
     HostName 199.189.242.220
+
+Host *
+    IgnoreUnknown UseKeychain
+    UseKeychain yes
+    User mykl
+    # don't drop connection if network is down temporarily (eg, suspend)
+    TCPKeepAlive no
+    # but do send ssh keepalives every minute to keep firewalls happy
+    ServerAliveInterval 60
+    ServerAliveCountMax 10
+    # keep connections open for 4 hours, even after logging out
+    ControlPersist 4h
+    ControlMaster auto
+    ControlPath ~/.ssh/sockets/socket-%r@%h:%p
+
