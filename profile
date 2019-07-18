@@ -39,7 +39,14 @@ _pwd () {
 
 test "$(whoami)" = root && _sigil=\# || _sigil=%
 HOST=`hostname -s`
-PS1='$(__git_complete)$HOST $(printf "\e['$(_colorize $HOST)'m$(_pwd)\e[0m")$_sigil '
+
+# below is a bit of a hack but honestly i'm tired
+if test "$(uname)" = 'Darwin' || test "$SHELL" = '/usr/local/bin/oksh'
+then
+    PS1='$(__git_complete)$HOST \[\e['$(_colorize $HOST)'m\]$(_pwd)\[\e[0m\]$_sigil '
+else
+    PS1='$(__git_complete)$HOST $(printf "\e['$(_colorize $HOST)'m$(_pwd)\e[0m")$_sigil '
+fi
 
 # Paths and scripts
 test -d /usr/sbin          && export PATH=/usr/sbin:$PATH
