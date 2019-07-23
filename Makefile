@@ -1,4 +1,4 @@
-.PHONY: all fonts st
+.PHONY: all fonts st macos
 
 FILES = bin gitconfig gitmessage vim vimrc config cvsrc profile logout ssh/config hnbrc
 
@@ -12,6 +12,15 @@ all:
 		echo "Symlink: `pwd`/$$file => $(HOME)/.$$file" ; \
 		ln -sf `pwd`/$$file $(HOME)/.$$file ; \
 	done
+
+macos:
+	@case `uname` in \
+		Darwin) \
+			cp macos/launchd/io.zick.RemoveLocalAdobeDaemons.plist ~/Library/LaunchAgents; \
+			sudo cp macos/launchd/io.zick.RemoveGlobalAdobeDaemons.plist /Library/LaunchDaemons \
+			;; \
+		*) echo only intended to run on Darwin ;; \
+	esac
 
 fonts:
 	@case `uname` in \
