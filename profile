@@ -94,7 +94,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 cd() {
-    builtin cd $@
+    builtin cd "$@"
     export DIRHISTORY=`pwd`:$DIRHISTORY
 }
 
