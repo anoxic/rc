@@ -6,7 +6,6 @@ DOTFILES
 
 TODO
 
-* create dirh, pushd, popd scripts
 * add a macos config file
-* make a build file for install my default utils
+* make a build file to install my default utils
 
