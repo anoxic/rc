@@ -21,9 +21,6 @@ config/nvim/.netrwhist
 config/fish/fish_history
 config/fish/fishd*
 
-# composer
-config/composer/
-
 # fontforge
 config/fontforge/autosave/
 
@@ -38,3 +35,5 @@ config/cmus/search-history
 config/StardewValley/
 config/gocode/
 config/htop/
+config/configstore/
+config/composer/

@@ -21,8 +21,6 @@ then
 fi
 
 # oksh
-test -s $HOME/.bin/git-ksh/git-completion.ksh \
-    && . $HOME/.bin/git-ksh/git-completion.ksh
 HISTFILE="$HOME/.ksh_history"
 HISTSIZE=7777
 bind -m '^L'=clear'^J' 2>/dev/null
