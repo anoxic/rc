@@ -1,0 +1,9 @@
+#!/bin/sh
+git -C ~/.rc/priv pull
+git -C ~/.rc/priv push
+hnb ~/.rc/priv/plan
+echo commit message:
+read message
+git -C ~/.rc/priv commit plan -m "$message"
+git -C ~/.rc/priv pull
+git -C ~/.rc/priv push
