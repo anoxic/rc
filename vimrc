@@ -9,7 +9,9 @@ call vundle#begin()
 
 execute pathogen#infect()
 
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 
