@@ -65,12 +65,14 @@ export VIM_CRONTAB=`_cmd nvim || _cmd vim && echo true`
 export GIT_EDITOR=$EDITOR
 alias e=$EDITOR
 set -o emacs # use standard line-editing
+alias 1='sed 1q'
 
 # Git 
 alias g='git'
 alias gs='git status'
 alias gl='git pull'
 alias gp='git push'
+alias gco='git checkout'
 alias gd='git diff'
 alias gd..='git diff master...'
 alias gdc='git diff --cached'

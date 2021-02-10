@@ -128,19 +128,16 @@ map <leader>n :call RenameFile()<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set expandtab    " Use spaces instead of tabs
-set shiftwidth=4 " Set tabwidth to 4
-set tabstop=4    " Set tabwidth to 4
-set smarttab     " Be smart when using tabs ;)
+set shiftwidth=4 tabstop=4 smarttab expandtab
 
 set ai   "Auto indent
 set si   "Smart indent
 set wrap "Wrap lines
                  
-" Set tabwidth to 2 for certain languages
-autocmd FileType css setlocal shiftwidth=2 tabstop=2
+autocmd FileType go     setlocal noexpandtab
+autocmd FileType css    setlocal shiftwidth=2 tabstop=2
 autocmd FileType elixer setlocal shiftwidth=2 tabstop=2
-autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
+autocmd FileType ruby   setlocal shiftwidth=2 tabstop=2
 
 
 
