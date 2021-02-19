@@ -20,8 +20,8 @@ case $n in
 *.zip)     _cmd unzip && tar='unzip' ;;
 esac
 
-#if _cmd wget;   then fget=wget; o=' -O -'
-#elif _cmd curl; then fget='curl -s'; fi
+if _cmd wget;   then fget=wget; o=' -O -'
+elif _cmd curl; then fget='curl -s'; fi
 
 if test -n "$fget"
 then
