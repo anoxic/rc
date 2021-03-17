@@ -55,10 +55,24 @@ fi
 echo Unable to find a way to download file.
 exit 1
 
+
 #    Notes
 #
 # 1. on constrained systems, netcat or ncat is often available
-# 2. for basic http i can use telnet
+
+# 2. for non-secure http i can use telnet
+
 # 3. for future self using windows: Invoke-WebRequest <url> -O
 #    since i don't ever remember that :-)
+
+# 4. gnu awk has tcp/ip capabilities, for some reason.
+#    could exploit that
+#    https://www.gnu.org/software/gawk/manual/gawkinet/gawkinet.html
+
+# 5. in bash you can use the /dev/tcp device with some piping
+#
+#    #!/bin/bash
+#    exec 5<>/dev/tcp/23.226.231.60/80
+#    echo -e "GET /query/?tag=rant HTTP/1.0\nHost: zick.blog\n" >&5
+#    cat <&5
 
