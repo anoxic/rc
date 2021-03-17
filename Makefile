@@ -1,4 +1,4 @@
-.PHONY: all fonts st macos
+.PHONY: all fonts st oksh macos
 
 FILES = bin gitconfig gitmessage vim vimrc config cvsrc profile logout ssh/config hnbrc
 
@@ -36,6 +36,13 @@ st:
 	git apply ../../patches/st-my-ui-0.8.1.diff; \
 	make; \
 	$(DO) make install; \
+	make clean
+
+oksh:
+	cd src/oksh && ./configure && make && \
+	$(DO) make install && \
+	grep `which oksh` /etc/shells || echo `which oksh` | $(DO) tee -a /etc/shells && \
+	chsh -s `which oksh`; \
 	make clean
 
 # https://github.com/mathiasbynens/dotfiles/blob/master/.macos
