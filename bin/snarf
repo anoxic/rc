@@ -1,0 +1,64 @@
+#!/bin/sh
+
+_cmd () {
+    command -v $1 >/dev/null 2>&1
+}
+
+if test $# -eq 0 || test $# -gt 1
+then
+    echo Usage: `basename $0` \<url\>
+    test $# -gt 1 && echo `basename $0` only supports one argument
+    exit 1
+fi
+
+n=`basename "$1"`
+
+case $n in
+*.tar)     tar='tar xf' ;;
+*.tar.gz)  tar='tar xzf' ;;
+*.tar.bz2) tar='tar xjf' ;;
+*.zip)     _cmd unzip && tar='unzip' ;;
+esac
+
+if _cmd wget;   then fget=wget; o=' -O -'
+elif _cmd curl; then fget='curl -s'; fi
+
+if test -n "$fget"
+then
+    echo Downloading with $fget.
+    if test "$tar" != ''
+    then
+        $fget "$1" $o | $tar
+    else
+        $fget "$1" $o > $n
+    fi
+    exit $?
+fi
+
+# on BSD systems, ftp supports http(s).  i haven't found a
+# simple reliable way to test for http support except uname
+if _cmd ftp
+then
+    case `uname` in *BSD)
+        echo Downloading with ftp.
+        if test "$tar" != ''
+        then
+            ftp "$1" && $tar $n
+            test -f $n && rm $n
+        else
+            ftp "$1"
+        fi
+        exit $?
+    esac
+fi
+
+echo Unable to find a way to download file.
+exit 1
+
+#    Notes
+#
+# 1. on constrained systems, netcat or ncat is often available
+# 2. for basic http i can use telnet
+# 3. for future self using windows: Invoke-WebRequest <url> -O
+#    since i don't ever remember that :-)
+
