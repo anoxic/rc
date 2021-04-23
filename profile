@@ -5,6 +5,7 @@ _cmd () {
 # ssh
 umask 022
 test $TERM = st-256color && export TERM=xterm-256color
+test $TERM = xterm-kitty && export TERM=xterm-256color
 export LANG=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -64,12 +65,14 @@ export VIM_CRONTAB=`_cmd nvim || _cmd vim && echo true`
 export GIT_EDITOR=$EDITOR
 alias e=$EDITOR
 set -o emacs # use standard line-editing
+alias 1='sed 1q'
 
 # Git 
 alias g='git'
 alias gs='git status'
 alias gl='git pull'
 alias gp='git push'
+alias gco='git checkout'
 alias gd='git diff'
 alias gd..='git diff master...'
 alias gdc='git diff --cached'
@@ -79,6 +82,7 @@ alias gaa='git add --all'
 alias gap='git add -p'
 alias gc='git commit'
 alias gcp='git commit -p'
+alias gundo='git reset HEAD~1'
 
 # Processes
 alias %='fg %-'

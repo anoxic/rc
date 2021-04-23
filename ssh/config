@@ -1,8 +1,12 @@
-Host lava static e1 e2 w1 w2 sse1 sse2 ssc1 sqle1 sqlc1 kr* mothership
+Host lava static static.cps.direct e1 e2 w1 w2 sse1 sse2 ssc1 sqle1 sqlc1 kr* mothership
     Port 2319
 
 Host adna
     HostName adna.zick.io
+
+Host raptor r pig.land
+    HostName pig.land
+    Port 1701
 
 Host ftp
     HostName ftp1.cps.direct

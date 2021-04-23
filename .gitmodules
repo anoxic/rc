@@ -40,3 +40,9 @@
 [submodule "priv"]
 	path = priv
 	url = git@github.com:anoxic/priv.git
+[submodule "vim/bundle/vim-go"]
+	path = vim/bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
+[submodule "src/oksh"]
+	path = src/oksh
+	url = https://github.com/ibara/oksh.git
