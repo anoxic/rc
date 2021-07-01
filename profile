@@ -82,6 +82,7 @@ alias gaa='git add --all'
 alias gap='git add -p'
 alias gc='git commit'
 alias gcp='git commit -p'
+alias gundo='git reset HEAD~1'
 
 # Processes
 alias %='fg %-'

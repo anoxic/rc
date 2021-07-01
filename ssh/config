@@ -8,6 +8,10 @@ Host r pigland pig.land
 Host adna
     HostName adna.zick.io
 
+Host raptor r pig.land
+    HostName pig.land
+    Port 1701
+
 Host ftp
     HostName ftp1.cps.direct
 
