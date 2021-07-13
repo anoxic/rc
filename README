@@ -1,4 +1,4 @@
 DOTFILES
 
-# git clone git@github.com:anoxic/rc.git .rc
+# git clone git@github.com:anoxic/rc.git ~/.rc
 # cd ~/.rc && make
