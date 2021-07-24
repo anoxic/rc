@@ -98,9 +98,9 @@ nnoremap <c-h> :SidewaysLeft<cr>
 nnoremap <c-l> :SidewaysRight<cr>
 
 " Split CSS one-line declarations
-nmap " <Esc>:s/\([{;]\)[ ^I]*\(}*\)/\1\r\2  /g<CR> 
+nmap <ctrl-"> <Esc>:s/\([{;]\)[ ^I]*\(}*\)/\1\r\2  /g<CR>
 " Join CSS multi-line declarations
-vmap " :s/\([;{]\)\n[ ^I]*/\1 /g<CR>               
+vmap <ctrl-"> :s/\([;{]\)\n[ ^I]*/\1 /g<CR>
 
 
 " Jump to next/previous merge conflict marker
