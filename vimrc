@@ -146,14 +146,6 @@ set background=dark
 
 2mat ErrorMsg '\%81v.'
 
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions+=e
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
-
 set encoding=utf8 " Set utf8 as standard encoding and en_US as the standard language
 
 set ffs=unix,dos,mac " Use Unix as the standard file type
