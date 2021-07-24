@@ -1,6 +1,10 @@
 Host lava static static.cps.direct e1 e2 w1 w2 sse1 sse2 ssc1 sqle1 sqlc1 kr* mothership
     Port 2319
 
+Host r pigland pig.land
+    HostName raptor.sirsir.net
+    Port 1701
+
 Host adna
     HostName adna.zick.io
 
@@ -62,7 +66,7 @@ Host faith
     User brian
 
 Host starship
-    HostName 199.189.242.220
+    HostName 192.131.57.99
 
 Host *
     IgnoreUnknown UseKeychain

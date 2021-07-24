@@ -1,11 +1,4 @@
 DOTFILES
 
-   git clone git@github.com:anoxic/dotfiles.git .dotfiles
-   cd ~/.dotfiles && make
-
-
-TODO
-
-* add a macos config file
-* make a build file to install my default utils
-
+# git clone git@github.com:anoxic/rc.git ~/.rc
+# cd ~/.rc && make
