@@ -4,7 +4,7 @@ colorscheme solarized
 
 
 " Settings
-hi LineNr ctermfg=black ctermbg=none                    " Make the line numbers very dark
+hi LineNr ctermfg=gray ctermbg=none                     " Make the line numbers very dark
 hi SignColumn ctermbg=none                              " Remove sign column bg
 hi TabLine cterm=none ctermfg=blue ctermbg=black        " Tabline
 hi TabLineFill cterm=none ctermfg=blue ctermbg=black    " Tabline
