@@ -97,12 +97,6 @@ nnoremap - :Switch<cr>
 nnoremap <c-h> :SidewaysLeft<cr>
 nnoremap <c-l> :SidewaysRight<cr>
 
-" Restrict repetitive navigation keys and up/down arrow keys
-nmap jj :<C-u>echo 'Use <Num>j!'<CR>
-nmap kk :<C-u>echo 'Use <Num>k!'<CR>
-nmap <Down> :<C-u>echo 'Use <Num>j!'<CR>
-nmap <Up> :<C-u>echo 'Use <Num>k!'<CR>
-
 " Split CSS one-line declarations
 nmap " <Esc>:s/\([{;]\)[ ^I]*\(}*\)/\1\r\2  /g<CR> 
 " Join CSS multi-line declarations
