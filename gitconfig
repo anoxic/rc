@@ -11,3 +11,5 @@
 	safecrlf = false
 [commit]
     template = ~/.gitmessage
+[pull]
+	rebase = false
