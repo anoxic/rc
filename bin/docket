@@ -13,7 +13,7 @@ vim scp://lava/vc/qdocs/brian/"$fname"
 
 new=`ssh lava "$git ls-files --exclude-standard --others brian/$fname"`
 
-if test -n "$new" || ! ssh lava "$git diff-index --quiet HEAD -- brian/$fname" 
+if test -n "$new" || ! ssh lava "$git diff-index --quiet HEAD -- brian/$fname"
 then
     echo commit message:
     read message
