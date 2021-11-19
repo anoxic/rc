@@ -1,6 +1,12 @@
 #!/bin/sh
 
-if test -n "$1"; then fname=list_"$1"; else fname=list; fi
+if test -n "$1"
+then
+    fname=list_"$1"
+else
+    fname=list
+fi
+
 vim scp://lava/vc/qdocs/brian/"$fname"
 
 if ssh lava "git -C ~/vc/qdocs diff --quiet HEAD -- brian/list*"
