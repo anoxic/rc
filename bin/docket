@@ -9,12 +9,12 @@ fi
 
 vim scp://lava/vc/qdocs/brian/"$fname"
 
-if ssh lava "git -C ~/vc/qdocs diff --quiet HEAD -- brian/list*"
+if ssh lava "git -C ~/vc/qdocs diff --quiet HEAD -- brian/$fname"
 then
     echo
 else
     echo commit message:
     read message
-    ssh lava "git -C ~/vc/qdocs commit brian/list* -m \"$message\""
+    ssh lava "git -C ~/vc/qdocs commit brian/$fname -m \"$message\""
 fi
 
