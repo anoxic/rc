@@ -17,6 +17,6 @@ then
 else
     echo commit message:
     read message
-    ssh lava "$git commit brian/$fname -m \"$message\""
+    ssh lava "$git add brian/$fname && $git commit -m \"$message\""
 fi
 
