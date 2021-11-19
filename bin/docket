@@ -2,6 +2,13 @@
 
 if test -n "$1"; then fname=list_"$1"; else fname=list; fi
 vim scp://lava/vc/qdocs/brian/"$fname"
-echo commit message:
-read message
-ssh lava "git -C ~/vc/qdocs commit brian/list* -m \"$message\""
+
+if ssh lava "git -C ~/vc/qdocs diff --quiet HEAD -- brian/list*"
+then
+    echo 
+else
+    echo commit message:
+    read message
+    ssh lava "git -C ~/vc/qdocs commit brian/list* -m \"$message\""
+fi
+
