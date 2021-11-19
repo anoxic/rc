@@ -11,7 +11,7 @@ vim scp://lava/vc/qdocs/brian/"$fname"
 
 if ssh lava "git -C ~/vc/qdocs diff --quiet HEAD -- brian/list*"
 then
-    echo 
+    echo
 else
     echo commit message:
     read message
