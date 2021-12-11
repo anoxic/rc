@@ -112,8 +112,8 @@ pushd() {
 
 popd() {
     test -z $DIRSTACK && echo popd: end of stack && return 1
-    export DIRSTACK=`echo $DIRSTACK | sed 's/[^:]*://'`
     cd `echo $DIRSTACK | sed s/:.*//`
+    export DIRSTACK=`echo $DIRSTACK | sed 's/[^:]*://'`
 }
 
 dirh() {
