@@ -25,9 +25,6 @@
 [submodule "vim/bundle/vim-php-refactoring"]
 	path = vim/bundle/vim-php-refactoring
 	url = https://github.com/vim-php/vim-php-refactoring
-[submodule "vim/bundle/phpcomplete.vim"]
-	path = vim/bundle/phpcomplete.vim
-	url = git://github.com/shawncplus/phpcomplete.vim.git
 [submodule "vim/bundle/php.vim"]
 	path = vim/bundle/php.vim
 	url = https://github.com/StanAngeloff/php.vim.git
