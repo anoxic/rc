@@ -11,7 +11,7 @@ execute pathogen#infect()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'fatih/vim-go'
-Plugin 'StanAngeloff/php.vim'
+Plugin 'php/php.vim'
 
 call vundle#end()
 
