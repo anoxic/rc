@@ -1,4 +1,4 @@
-.PHONY: all fonts st oksh macos
+.PHONY: all fonts oksh macos
 
 FILES = bin gitconfig gitmessage vim vimrc config cvsrc profile logout ssh/config hnbrc
 
@@ -29,14 +29,6 @@ fonts:
 		Darwin) open priv/*.ttf ;; \
 		*) echo sorry, don\'t know how to install a font on `uname` ;; \
 	esac
-
-st:
-	cd src/st; \
-	test `uname` = Darwin && git apply ../../patches/st-darwin-0.8.1.diff; \
-	git apply ../../patches/st-my-ui-0.8.1.diff; \
-	make; \
-	$(DO) make install; \
-	make clean
 
 oksh:
 	cd src/oksh && ./configure && make && \
