@@ -71,7 +71,6 @@ alias 1='sed 1q'
 alias g='git'
 alias gs='git status'
 alias gl='git pull'
-alias gp='git push'
 alias gco='git checkout'
 alias gd='git diff'
 alias gd..='git diff master...'
@@ -112,8 +111,8 @@ pushd() {
 
 popd() {
     test -z $DIRSTACK && echo popd: end of stack && return 1
-    export DIRSTACK=`echo $DIRSTACK | sed 's/[^:]*://'`
     cd `echo $DIRSTACK | sed s/:.*//`
+    export DIRSTACK=`echo $DIRSTACK | sed 's/[^:]*://'`
 }
 
 dirh() {

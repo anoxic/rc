@@ -1,0 +1,10 @@
+#!/bin/sh
+
+SKIP="master|dev|HEAD"
+
+git fetch
+git branch --merged | grep -i -v -E "$SKIP" | xargs -r git branch -d
+git branch --all --merged remotes/origin/master | grep -i -v -E "$SKIP" \
+  | grep "remotes/origin/" | cut -d "/" -f 3- | xargs -r -n 1 git push --delete origin
+git remote prune origin
+git prune

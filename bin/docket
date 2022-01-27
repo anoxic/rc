@@ -1,7 +1,22 @@
 #!/bin/sh
 
-if test -n "$1"; then fname=list_"$1"; else fname=list; fi
+git='git -C ~/vc/qdocs'
+
+if test -n "$1"
+then
+    fname=list_"$1"
+else
+    fname=list
+fi
+
 vim scp://lava/vc/qdocs/brian/"$fname"
-echo commit message:
-read message
-ssh lava "git -C ~/vc/qdocs commit brian/list* -m \"$message\""
+
+new=`ssh lava "$git ls-files --exclude-standard --others brian/$fname"`
+
+if test -n "$new" || ! ssh lava "$git diff-index --quiet HEAD -- brian/$fname"
+then
+    echo commit message:
+    read message
+    ssh lava "$git add brian/$fname && $git commit -m \"$message\""
+fi
+

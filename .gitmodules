@@ -25,18 +25,12 @@
 [submodule "vim/bundle/vim-php-refactoring"]
 	path = vim/bundle/vim-php-refactoring
 	url = https://github.com/vim-php/vim-php-refactoring
-[submodule "vim/bundle/phpcomplete.vim"]
-	path = vim/bundle/phpcomplete.vim
-	url = git://github.com/shawncplus/phpcomplete.vim.git
 [submodule "vim/bundle/php.vim"]
 	path = vim/bundle/php.vim
 	url = https://github.com/StanAngeloff/php.vim.git
 [submodule "vim/bundle/Vundle.vim"]
 	path = vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
-[submodule "src/st"]
-	path = src/st
-	url = git://git.suckless.org/st
 [submodule "priv"]
 	path = priv
 	url = git@github.com:anoxic/priv.git
