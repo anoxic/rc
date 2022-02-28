@@ -132,6 +132,7 @@ autocmd FileType go     setlocal noexpandtab
 autocmd FileType css    setlocal shiftwidth=2 tabstop=2
 autocmd FileType elixer setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby   setlocal shiftwidth=2 tabstop=2
+autocmd FileType html   setlocal shiftwidth=2 tabstop=2
 
 
 
