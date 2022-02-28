@@ -7,7 +7,7 @@ DO := $(shell command -v doas >/dev/null 2>&1 && echo doas || echo sudo)
 all:
 	git submodule init
 	git submodule update
-	chmod +x bin/*
+	chmod ug+x bin/*
 	@echo
 	@for file in $(FILES) ; do \
 		[ -s $(HOME)/.$$file ] && rm -rf $(HOME)/.$$file ; \
