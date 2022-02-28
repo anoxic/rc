@@ -71,7 +71,8 @@ nmap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
 " Borrowing jay's ctrl-slash just for funzies
-nnoremap <silent> <c-,> :w<CR>:!clear;php "%"\|more<CR>
+" although, ctrl-slash has issues for me, using ,p instead
+nnoremap <silent> <leader>p :wa<CR>:!clear ; php -l % && clear && php "%"\|more<CR>
 
 " Map Y to act like D/C and yank to EOL, rather than act as yy
 nnoremap Y y$
