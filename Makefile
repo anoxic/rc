@@ -20,7 +20,8 @@ macos:
 		Darwin) \
 			cp macos/launchd/io.zick.RemoveLocalAdobeDaemons.plist ~/Library/LaunchAgents; \
 			$(SUDO) cp macos/launchd/io.zick.RemoveGlobalAdobeDaemons.plist /Library/LaunchDaemons; \
-			ln -sf `pwd`/macos/xbar/current_song.15s.sh /Users/mykl/Library/Application\ Support/xbar/plugins/current_song.15s.sh \
+			mkdir -p ~/Library/Application\ Support/xbar/plugins/ && \
+			ln -sf `pwd`/macos/xbar/current_song.15s.sh ~/Library/Application\ Support/xbar/plugins/current_song.15s.sh \
 			;; \
 		*) echo only intended to run on Darwin ;; \
 	esac
