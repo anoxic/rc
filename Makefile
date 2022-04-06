@@ -2,7 +2,7 @@
 
 FILES = bin gitconfig gitmessage vim vimrc config cvsrc profile logout ssh/config hnbrc
 
-DO := $(shell command -v doas >/dev/null 2>&1 && echo doas || echo sudo)
+SUDO := $(shell command -v doas >/dev/null 2>&1 && echo doas || echo sudo)
 
 all:
 	git submodule init
@@ -19,7 +19,7 @@ macos:
 	@case `uname` in \
 		Darwin) \
 			cp macos/launchd/io.zick.RemoveLocalAdobeDaemons.plist ~/Library/LaunchAgents; \
-			$(DO) cp macos/launchd/io.zick.RemoveGlobalAdobeDaemons.plist /Library/LaunchDaemons; \
+			$(SUDO) cp macos/launchd/io.zick.RemoveGlobalAdobeDaemons.plist /Library/LaunchDaemons; \
 			ln -sf `pwd`/macos/xbar/current_song.15s.sh /Users/mykl/Library/Application\ Support/xbar/plugins/current_song.15s.sh \
 			;; \
 		*) echo only intended to run on Darwin ;; \
@@ -33,8 +33,8 @@ fonts:
 
 oksh:
 	cd src/oksh && ./configure && make && \
-	$(DO) make install && \
-	grep `which oksh` /etc/shells || echo `which oksh` | $(DO) tee -a /etc/shells && \
+	$(SUDO) make install && \
+	grep `which oksh` /etc/shells || echo `which oksh` | $(SUDO) tee -a /etc/shells && \
 	chsh -s `which oksh`; \
 	make clean
 
