@@ -10,8 +10,8 @@ call vundle#begin()
 execute pathogen#infect()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'fatih/vim-go'
+Plugin 'php/php.vim'
 
 call vundle#end()
 
@@ -71,7 +71,8 @@ nmap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
 " Borrowing jay's ctrl-slash just for funzies
-nnoremap <silent> <c-s> :w<CR>:!clear;php "%"\|more<CR>
+" although, ctrl-slash has issues for me, using ,p instead
+nnoremap <silent> <leader>p :wa<CR>:!clear ; php -l % && clear && php "%"\|more<CR>
 
 " Map Y to act like D/C and yank to EOL, rather than act as yy
 nnoremap Y y$
@@ -132,6 +133,7 @@ autocmd FileType go     setlocal noexpandtab
 autocmd FileType css    setlocal shiftwidth=2 tabstop=2
 autocmd FileType elixer setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby   setlocal shiftwidth=2 tabstop=2
+autocmd FileType html   setlocal shiftwidth=2 tabstop=2
 
 
 
