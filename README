@@ -2,3 +2,15 @@ DOTFILES
 
 # git clone git@github.com:anoxic/rc.git ~/.rc
 # cd ~/.rc && make
+
+
+(POSSIBLY) TODO
+
+x  xbar script for use with mpd
+o  homebrew on macos
+   o  mpc
+   o  jq
+o  software repo on raptor
+   o  bin/VENDOR/SOFTWARE.VERSION.{app,exe}
+   o  symlink to -> OS/ARCH/OS_VERSION/SOFTWARE.{app,exe}
+   o  script to fetch the right version
