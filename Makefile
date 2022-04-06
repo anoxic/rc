@@ -19,7 +19,8 @@ macos:
 	@case `uname` in \
 		Darwin) \
 			cp macos/launchd/io.zick.RemoveLocalAdobeDaemons.plist ~/Library/LaunchAgents; \
-			$(DO) cp macos/launchd/io.zick.RemoveGlobalAdobeDaemons.plist /Library/LaunchDaemons \
+			$(DO) cp macos/launchd/io.zick.RemoveGlobalAdobeDaemons.plist /Library/LaunchDaemons; \
+			ln -sf `pwd`/macos/xbar/current_song.15s.sh /Users/mykl/Library/Application\ Support/xbar/plugins/current_song.15s.sh \
 			;; \
 		*) echo only intended to run on Darwin ;; \
 	esac
