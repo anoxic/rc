@@ -9,7 +9,5 @@
 	editor = vim
 	autocrlf = false
 	safecrlf = false
-[commit]
-    template = ~/.gitmessage
 [pull]
 	rebase = false
