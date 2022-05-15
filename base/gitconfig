@@ -1,0 +1,17 @@
+[user]
+name = Brian Zick
+email = brian@zick.io
+
+[color]
+ui = true
+
+[push]
+default = simple
+
+[core]
+editor = vim
+autocrlf = false
+safecrlf = false
+
+[pull]
+rebase = false

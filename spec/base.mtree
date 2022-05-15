@@ -1,0 +1,27 @@
+/set type=file mode=0640
+
+.cvsrc             content=base/cvsrc
+.gitconfig         content=base/gitconfig
+.gitignore_global  content=base/gitignore_global
+.logout            content=base/logout
+.profile           content=base/profile
+.vimrc             content=base/vimrc
+
+/set type=file mode=0750
+
+.bin               type=dir                       mode=0755
+.bin/docket        content=base/bin/docket
+.bin/flushdns      content=base/bin/flushdns
+.bin/focus         content=base/bin/focus
+.bin/gbmv          content=base/bin/gbmv
+.bin/gp            content=base/bin/gp
+.bin/gprune        content=base/bin/gprune
+.bin/grr           content=base/bin/grr
+.bin/log_flush     content=base/bin/log_flush
+.bin/log_rotate    content=base/bin/log_rotate
+.bin/s             content=base/bin/s
+.bin/snarf         content=base/bin/snarf
+.bin/sr            content=base/bin/sr
+.bin/ss            content=base/bin/ss
+.bin/unfocus       type=link                      link=focus
+

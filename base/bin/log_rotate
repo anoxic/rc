@@ -1,0 +1,11 @@
+#!/bin/sh
+# log rotation for some custom logs i have
+
+for i in "$@"
+do
+    for j in `find /home /var/www -name "$i" 2>/dev/null`
+    do
+        mv "$j" "$j-`date +%Y-%m-%d`"
+    done
+done
+

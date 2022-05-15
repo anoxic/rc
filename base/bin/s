@@ -1,0 +1,19 @@
+#!/bin/sh
+
+_mosh() {
+    # arg1 = port, arg2 = host
+
+    if command -v mosh >/dev/null 2>&1
+    then
+       mosh "$1"
+    else
+       ssh "$1"
+    fi
+}
+
+case "$1" in
+    static|lava|ftp1|sse1|sse2|ssc1|sqle1|sqlc1|w2|kr|mothership|adna|static.cps.direct)
+        _mosh "$1";;
+    *)
+        ssh "$1";;
+esac
