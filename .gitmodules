@@ -1,0 +1,3 @@
+[submodule "priv"]
+path = priv
+url = git@github.com:anoxic/priv.git
