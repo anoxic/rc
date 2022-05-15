@@ -1,0 +1,9 @@
+/set type=file mode=0640
+
+.fonts               type=dir                   mode=0755
+.fonts/input-b.ttf   content=priv/input-b.ttf
+.fonts/input-bi.ttf  content=priv/input-bi.ttf
+.fonts/input-i.ttf   content=priv/input-i.ttf
+.fonts/input-r.ttf   content=priv/input-r.ttf
+.ssh                 type=dir                   mode=0755
+.ssh/config          content=priv/sshconfig
