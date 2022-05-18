@@ -3,7 +3,7 @@
 	url = https://github.com/AndrewRadev/splitjoin.vim
 [submodule "vim/bundle/vim-lesscss"]
 	path = vim/bundle/vim-lesscss
-	url = git://github.com/vitalk/vim-lesscss.git
+	url = https://github.com/vitalk/vim-lesscss.git
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
@@ -12,10 +12,10 @@
 	url = https://github.com/AndrewRadev/switch.vim.git
 [submodule "vim/bundle/gapply"]
 	path = vim/bundle/gapply
-	url = git://github.com/AndrewRadev/gapply.vim.git
+	url = https://github.com/AndrewRadev/gapply.vim.git
 [submodule "vim/bundle/sideways"]
 	path = vim/bundle/sideways
-	url = git://github.com/AndrewRadev/sideways.vim.git
+	url = https://github.com/AndrewRadev/sideways.vim.git
 [submodule "vim/bundle/vim-gitgutter"]
 	path = vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
