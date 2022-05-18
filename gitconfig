@@ -11,3 +11,8 @@
 	safecrlf = false
 [pull]
 	rebase = false
+[safe]
+	directory = /var/www/qassets
+	directory = /var/www/qmonolith
+	directory = /var/www/reqlog
+	directory = /var/www/staging
