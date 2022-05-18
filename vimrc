@@ -72,8 +72,9 @@ nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
 " Borrowing jay's ctrl-slash just for funzies
 " although, ctrl-slash has issues for me, using ,p instead
-nnoremap <silent> <leader>p :wa<CR>:!clear ; php -l "%" && clear && php "%"\|more<CR>
-nnoremap <silent> <leader>l :wa<CR>:!clear ; php -l "%"\|more<CR>
+au BufNewFile,BufRead *.php nnoremap <silent> <leader>p :wa<CR>:!clear ; php -l % && clear && php "%"\|more<CR>
+au BufNewFile,BufRead *.php nnoremap <silent> <leader>l :wa<CR>:!clear ; php -l "%"\|more<CR>
+au BufNewFile,BufRead *.sh nnoremap  <silent> <leader>p :wa<CR>:!clear ; sh "%"\|more<CR>
 
 " Map Y to act like D/C and yank to EOL, rather than act as yy
 nnoremap Y y$

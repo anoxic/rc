@@ -1,4 +1,4 @@
-Host lava static static.cps.direct e1 e2 w1 w2 sse1 sse2 ssc1 sqle1 sqlc1 kr* mothership
+Host lava static static.cps.direct e1 e2 e3 w1 w2 sse1 sse2 sse3 ssc1 sqle1 sqlc1 kr* mothership
     Port 2319
 
 Host adna
@@ -46,6 +46,9 @@ Host sse1
 
 Host sse2
     HostName solidstone-e2.cps.direct
+
+Host sse3
+    HostName solidstone-e3.cps.direct
 
 Host ssc1
     HostName solidstone-c1.cps.direct
