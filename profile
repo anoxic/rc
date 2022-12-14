@@ -138,3 +138,6 @@ then
     alias chrome="open -a google\\ chrome"
     alias safari="open -a safari"
 fi
+
+# Logout
+trap '$HOME/.logout' 0
