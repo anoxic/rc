@@ -128,5 +128,3 @@ then
     alias safari="open -a safari"
 fi
 
-# Logout
-trap '$HOME/.logout' 0
