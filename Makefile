@@ -1,6 +1,6 @@
 .PHONY: all fonts oksh macos
 
-FILES = bin gitconfig gitignore_global vim vimrc config cvsrc profile logout ssh/config hnbrc
+FILES = bin gitconfig gitignore_global vim vimrc config cvsrc profile ssh/config hnbrc
 
 SUDO := $(shell command -v doas >/dev/null 2>&1 && echo doas || echo sudo)
 
