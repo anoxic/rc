@@ -10,17 +10,6 @@ export LANG=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-if test -z "$SSH_AUTH_SOCK"
-then
-    if test "$(uname)" = 'Darwin'
-    then
-        eval "$(ssh-agent -s)" && ssh-add -K
-    else
-        eval "$(ssh-agent -s -t 86400)" && ssh-add
-        trap 'ssh-add -D && ssh-agent -k' EXIT
-    fi
-fi
-
 # oksh
 HISTFILE="$HOME/.ksh_history"
 HISTSIZE=7777
