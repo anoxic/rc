@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SKIP="master|dev|HEAD"
+SKIP="master|dev|HEAD|\\*"
 
 git fetch
 git branch --merged | grep -i -v -E "$SKIP" | xargs -r git branch -d
